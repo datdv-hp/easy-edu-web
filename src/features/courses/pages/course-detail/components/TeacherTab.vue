@@ -27,7 +27,7 @@ onMounted(async () => {
         <th class="text-left ws-nowrap">
           {{ $t('courses.detail.teacher.phone') }}
         </th>
-        <th class="text-left ws-nowrap">
+        <th class="text-left ws-nowrap minW-300px">
           {{ $t('courses.detail.teacher.degree') }}
         </th>
       </tr>
@@ -46,7 +46,7 @@ onMounted(async () => {
         <td class="ws-nowrap">
           {{ item.phone }}
         </td>
-        <td class="ws-nowrap">
+        <td class="teacher-degree">
           {{ item.teacherDetail?.degree ? item.teacherDetail.degree : '' }}
         </td>
       </tr>
@@ -58,5 +58,8 @@ onMounted(async () => {
   height: calc(100vh - 60px - 32px - 388px - 16px - 16px - 56px - 16px + 120px);
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
+}
+.teacher-degree {
+  white-space: pre-line;
 }
 </style>

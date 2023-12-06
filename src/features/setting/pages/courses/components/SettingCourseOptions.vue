@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import editIcon from '@/assets/icons/lms/edit-icon.svg';
 import { showErrorNotification, showSuccessNotification } from '@/common/helpers';
 import { useRole } from '@/common/stores/role.store';
 import { LoadingOverlay, TableBase, TableHeader } from '@/components';
@@ -8,8 +7,7 @@ import SettingCourseDialog from '@/features/setting/components/SettingCourseDial
 import { useSettingCourseDialog } from '@/features/setting/stores/setting-course-dialog.store';
 import { useSettingCourseStore } from '@/features/setting/stores/settingCourse.store';
 import { showDialogConfirm } from '@/plugins';
-import { onBeforeUnmount } from 'vue';
-import { onMounted } from 'vue';
+import { onBeforeUnmount, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n();
@@ -138,13 +136,10 @@ onBeforeUnmount(() => {
             <td v-if="role.courseFormSetting?.update">
               <v-btn
                 class="rounded-circle"
-                icon="mdi-trash-can-outline"
+                icon="$custom.edit"
                 variant="text"
                 @click="handleClickEdit(item.id)"
               >
-                <template v-slot:default>
-                  <v-img :src="editIcon"></v-img>
-                </template>
               </v-btn>
             </td>
           </tr>

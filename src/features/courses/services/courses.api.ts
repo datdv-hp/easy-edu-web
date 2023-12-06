@@ -35,7 +35,7 @@ class CourseApiService extends ApiService {
   }
 
   getDetailTeachers(id: string): Promise<IBodyResponse<any>> {
-    return this.client.get(`${this.baseUrl}/${id}/teachers`);
+    return this.client.get(`${this.baseUrl}/${id}/teacher`);
   }
 
   getDetailExams(id: string): Promise<IBodyResponse<any>> {

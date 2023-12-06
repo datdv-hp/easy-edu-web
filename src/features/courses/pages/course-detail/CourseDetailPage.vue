@@ -158,12 +158,12 @@ const isShowTabs = computed(
             :value="CourseDetailTab.SUBJECT"
             >{{ $t('courses.detail.subject.tabTitle') }}</v-tab
           >
-          <!-- <v-tab
+          <v-tab
             v-if="role.course?.viewTeacherByCourse"
             class="px-4"
             :value="CourseDetailTab.TEACHER"
             >{{ $t('courses.detail.teacher.tabTitle') }}</v-tab
-          > -->
+          >
         </v-tabs>
       </v-card-title>
       <v-card-text v-if="isShowTabs" class="pa-0">

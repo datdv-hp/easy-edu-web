@@ -116,6 +116,7 @@ const checkAllModelValue = computed(() => {
       <div class="d-flex align-center gap--2">
         <v-checkbox
           density="compact"
+          color="primary"
           :model-value="checkAllModelValue"
           :indeterminate="!isSelectedAll && !isEmptySelect"
           :hide-details="true"
