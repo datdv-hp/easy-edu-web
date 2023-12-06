@@ -2,7 +2,7 @@
 defineProps<{
   icon: string;
   title: string;
-  description: string | number;
+  description?: string | number;
   color?: string;
 }>();
 

@@ -314,6 +314,7 @@ onBeforeUnmount(() => {
                 @click.stop
                 :model-value="isAttendanceForAll"
                 density="compact"
+                color="primary"
                 hide-details
                 :disabled="_isLessonUpcoming || !store.canAttendanceList?.length"
                 :indeterminate="!isAttendanceForAll && !isNoAttendance"
@@ -378,6 +379,7 @@ onBeforeUnmount(() => {
                     :model-value="!!store.studentsObj[item?.id].timekeeping?.isAttended"
                     class="flex-0"
                     density="compact"
+                    color="primary"
                     :disabled="_isLessonUpcoming"
                     :readonly="_isLessonCompleted"
                     hide-details

@@ -1,11 +1,10 @@
 import { PageName } from '@/common/constants';
+import MainLayout from '@/layouts/MainLayout.vue';
 import SecondaryLayout from '@/layouts/SecondaryLayout.vue';
 import { RouteRecordRaw } from 'vue-router';
-import UserAuthorizationManagementPage from './pages/user-authorization/UserAuthorizationManagementPage.vue';
-import MainLayout from '@/layouts/MainLayout.vue';
 import SettingCourse from './pages/courses/SettingCoursePage.vue';
-import SettingEvaluationPage from './pages/evaluation/SettingEvaluationPage.vue';
 import SettingTimekeepingPage from './pages/timekeeping/SettingTimekeepingPage.vue';
+import UserAuthorizationManagementPage from './pages/user-authorization/UserAuthorizationManagementPage.vue';
 
 const settingRoutes: Array<RouteRecordRaw> = [
   {
@@ -34,15 +33,6 @@ const settingRoutes: Array<RouteRecordRaw> = [
         meta: {
           requiresAuth: true,
           role: 'courseFormSetting.view',
-        },
-      },
-      {
-        path: 'evaluation',
-        component: SettingEvaluationPage,
-        name: PageName.SETTING_EVALUATION_PAGE,
-        meta: {
-          requiresAuth: true,
-          role: ['evaluationClassifiedSetting.view', 'evaluationCriteriaSetting.view'],
         },
       },
       {

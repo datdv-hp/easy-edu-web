@@ -12,8 +12,6 @@ export const sidebarItems = () => {
     () =>
       role.role?.view ||
       role.courseFormSetting?.view ||
-      role.evaluationClassifiedSetting?.view ||
-      role.evaluationCriteriaSetting?.view ||
       role.settingTimekeeping?.view,
   );
 
@@ -151,14 +149,6 @@ export const sidebarItems = () => {
                 routeName: PageName.SETTING_COURSE_PAGE,
                 activeRouteNames: [PageName.SETTING_COURSE_PAGE],
                 role: role.courseFormSetting?.view,
-              },
-              {
-                title: t('app.sidebar.setting.evaluation.name'),
-                routeName: PageName.SETTING_EVALUATION_PAGE,
-                activeRouteNames: [PageName.SETTING_EVALUATION_PAGE],
-                role:
-                  role.evaluationClassifiedSetting?.view ||
-                  role.evaluationCriteriaSetting?.view,
               },
               {
                 title: t('app.sidebar.setting.timekeeping.name'),

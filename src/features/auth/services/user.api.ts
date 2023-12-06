@@ -9,7 +9,7 @@ class UserApiService extends ApiService {
   }
 
   resendVerifyEmail(id: string): Promise<IBodyResponse<any>> {
-    return this.client.post(`${this.baseUrl}/${id}/resend-verify-email`);
+    return this.client.post(`${this.baseUrl}/${id}/verify-email`);
   }
 
   activeAccount(

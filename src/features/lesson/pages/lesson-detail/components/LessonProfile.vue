@@ -5,7 +5,6 @@ import { LoadingOverlay, ProfileItem } from '@/components';
 import Icons from '@/assets/icons';
 import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
-import ProfileRecordings from '@/components/ProfileRecordings.vue';
 import ProfileCardItem from '@/components/ProfileCardItem.vue';
 
 const { t } = useI18n();
@@ -101,13 +100,6 @@ const students = computed(() => {
   ];
   return _students.filter((item) => item.isShow);
 });
-
-const recordings = computed(() => ({
-  icon: Icons.file,
-  title: t('lesson.detail.info.recordings'),
-  description: store.lessonInfo?.recordings || [],
-  isShow: !!store?.lessonInfo?.recordings?.length,
-}));
 </script>
 
 <template>
@@ -117,35 +109,24 @@ const recordings = computed(() => ({
         {{ $t('lesson.detail.info.title') }}
       </div>
       <v-row>
-        <v-col :cols="recordings.isShow ? 8 : 12">
-          <v-row>
-            <v-col cols="6" v-for="(item, index) in _profile" :key="index">
-              <ProfileItem
-                :icon="item.icon"
-                :title="item.title"
-                :description="item.description"
-                :isList="item?.isList"
-                :link="item?.link"
-                :isLinks="item.isLinks"
-              />
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col cols="6" v-for="(item, index) in students" :key="index">
-              <ProfileCardItem
-                :icon="item.icon"
-                :title="item.title"
-                :description="item.description as string"
-                :color="item.color"
-              />
-            </v-col>
-          </v-row>
+        <v-col cols="6" v-for="(item, index) in _profile" :key="index">
+          <ProfileItem
+            :icon="item.icon"
+            :title="item.title"
+            :description="item.description"
+            :isList="item?.isList"
+            :link="item?.link"
+            :isLinks="item.isLinks"
+          />
         </v-col>
-        <v-col cols="4" v-if="recordings.isShow">
-          <ProfileRecordings
-            :icon="recordings.icon"
-            :title="recordings.title"
-            :description="recordings.description"
+      </v-row>
+      <v-row>
+        <v-col cols="6" v-for="(item, index) in students" :key="index">
+          <ProfileCardItem
+            :icon="item.icon"
+            :title="item.title"
+            :description="item.description"
+            :color="item.color"
           />
         </v-col>
       </v-row>

@@ -75,9 +75,6 @@ const { resetField: resetSubject } = useField('subject');
 const { value: documents } = useField<string[]>('documents', undefined, {
   initialValue: [''],
 });
-const { value: recordings } = useField<string[]>('recordings', undefined, {
-  initialValue: [''],
-});
 const { meta: lessonTimeListMeta } = useField('timeList');
 
 const isValidSubmit = computed(() => {
@@ -143,7 +140,6 @@ onMounted(async () => {
       classroomId: item.classroom.id,
       subjectId: item.subject.id,
       documents: item.documents?.length ? item.documents : [''],
-      recordings: item.recordings?.length ? item.recordings : [''],
       isUseGoogleMeet: !!item.isUseGoogleMeet,
       syllabusId: item.syllabusId,
       lectureIds: item.lectureIds,
@@ -350,7 +346,6 @@ const handleClickUpdate = handleSubmit(async (values) => {
 });
 
 const isAbleAddDocuments = computed(() => documents.value?.length < 5);
-const isAbleAddRecordings = computed(() => recordings.value.length < 5);
 
 const onUpdateSelectedSubject = async (value?: string) => {
   // set created lessons of subject
@@ -390,20 +385,15 @@ const isFirst = (index: number) => {
 };
 
 const onClickDocumentButton = (index: number) => {
+  const document = cloneDeep(formValue.documents);
   if (isFirst(index) && isAbleAddDocuments.value) {
-    formValue.documents.push('');
+    document.push('');
   } else {
-    formValue.documents.splice(index, 1);
+    document.splice(index, 1);
   }
+  setFieldValue('documents', document);
 };
 
-const onClickRecordingButton = (index: number) => {
-  if (isFirst(index) && isAbleAddRecordings.value) {
-    recordings.value.push('');
-  } else {
-    recordings.value.splice(index, 1);
-  }
-};
 
 const isAbleToUpdate = computed(() => {
   return (
@@ -584,7 +574,7 @@ defineExpose({
         >
           <template #activator="{ props }">
             <div v-bind="props" class="login-google" @click.stop="getGoogleLoginLink">
-              Đăng nhập
+              {{ $t('auth.button.login') }}
             </div>
           </template>
         </v-tooltip>
@@ -617,18 +607,7 @@ defineExpose({
         />
       </v-col>
     </v-row>
-    <v-row>
-      <v-col cols="12" v-for="(_, index) in recordings" :key="index">
-        <InputTextItem
-          :name="`recordings[${index}]`"
-          :index="index"
-          :label="$t('lesson.form.recordings')"
-          :placeholder="$t('lesson.form.placeholder.recordings')"
-          :isAbleAddItem="isAbleAddRecordings"
-          @click-btn-action="onClickRecordingButton(index)"
-        />
-      </v-col>
-    </v-row>
+
     <v-row>
       <v-col cols="12">
         <span class="fz-4_5 fw-600 text--black">{{
