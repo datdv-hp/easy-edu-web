@@ -1,0 +1,226 @@
+$body-font-family: 'Be Vietnam Pro', sans-serif;
+$color-black: #000000;
+$color-red: #ff0000;
+$color-white: #ffffff;
+$color-white-01: #f8f8f8;
+
+$color-background: #f8f7fa;
+$color-border: rgba(0, 0, 0, 0.12);
+$color-border-hover: #87858c;
+$color-border-focus: #7367f0;
+$color-border-focus-secondary: #BFC4EA;
+$color-text-primary: #333238;
+$color-text-secondary: #33303cde;
+$color-sidebar-item-title: #828086;
+$color-sidebar-item-hover: #f9f9fa;
+$color-sidebar-item-focus: #f4f4f4;
+
+$v-global-theme-primary: rgb(115, 103, 240);
+$v-shadow-key-umbra-opacity: rgb(51, 48, 60, 0.03);
+$v-shadow-key-penumbra-opacity: rgb(51, 48, 60, 0.02);
+$v-shadow-key-ambient-opacity: rgb(51, 48, 60, 0.01);
+
+$offset-table-height-with-tab: 100px + 60px + 32px; // 100px: height of header with tab, 60px: table header, 32px: total margin of table
+$offset-table-height-without-tab: 60px + 60px + 32px; // 60px: height of header without tab, 60px: table header, 32px: total margin of table
+$offset-table-height-in-list: 60px + 80px + 60px + 16px; // 60px: height of header, 80px: space between header and table, 60px: table header, 16px: margin bottom of table
+
+$header-document-height: 74px;
+$sidebar-document-width: 260px;
+
+$grid-breakpoints: (
+    xs: 399px,
+    sm: 575px,
+    md: 767px,
+    lg: 991px,
+    xl: 1199px,
+    xxl: 1399px,
+);
+
+// z-index management
+$zIndex: (
+    menu: 100,
+    popup: 200,
+    chatBox: 300,
+    searchForm: 150,
+);
+
+$roundeds: (
+    1: 4px,
+    1_5: 6px,
+    2: 8px,
+    2_5: 10px,
+    3: 12px,
+    4: 16px,
+    5: 20px,
+);
+
+$font-sizes: (
+    3: 12px,
+    3_5: 14px,
+    4: 16px,
+    4_5: 18px,
+    5: 20px,
+    5_5: 22px,
+    6: 24px,
+);
+
+$opacities: (
+    0: 0,
+    50: 0.5,
+    1: 1,
+);
+
+$font-weights: (
+    400: 400,
+    500: 500,
+    600: 600,
+    700: 700,
+    900: 900,
+);
+
+$gaps: (
+    1: 4px,
+    2: 8px,
+    2_5: 10px,
+    3: 12px,
+    4: 16px,
+    5: 20px,
+    6: 24px,
+    7: 28px,
+    8: 32px,
+    9: 36px,
+    10: 40px,
+    11: 44px,
+    12: 48px,
+);
+
+$widths: (
+    5: 5%,
+    10: 10%,
+    12: 12%,
+    15: 15%,
+    16: 16%,
+    20: 20%,
+    25: 25%,
+    30: 30%,
+    35: 35%,
+    40: 40%,
+    45: 45%,
+    50: 50%,
+    60: 60%,
+    70: 70%,
+);
+
+$widthsInPixel: (
+    50px: 50px,
+    52px: 52px,
+    56px: 56px,
+    72px: 72px,
+    100px: 100px,
+    120px: 120px,
+    150px: 150px,
+    160px: 160px,
+    190px: 190px,
+    200px: 200px,
+    250px: 250px,
+    300px: 300px,
+);
+
+$border-hover-color: rgb(75, 90, 92);
+$border-focused-width: 2px;
+$header-font-color: #33303cde;
+$text-subtitle-font-color: rgba(51, 48, 60, 0.68);
+
+$color-error-message: #ea5455;
+
+$font-be-vietnam-pro: 'Be Vietnam Pro', sans-serif;
+
+$colors: (
+    'primary-1': #6d79e8,
+    'primary-2': #9098de,
+    'primary-3': #bfc4ea,
+    'primary-4': #f2f1ff,
+    'primary-5': #f4f7ff,
+    'primary-6': #1890FF,
+    'secondary-1': #f2994a,
+    'secondary-2': #4057d0,
+    'secondary-3': #1625ab,
+    'neutral-1': #343458,
+    'neutral-2': #464962,
+    'neutral-3': #5a5c6f,
+    'neutral-4': #6d6f81,
+    'neutral-5': #adaeba,
+    'neutral-6': #e1e3e9,
+    'neutral-7': #f3f4f8,
+    'neutral-black': #212121,
+    'black': #1b1b33,
+    'white': #ffffff,
+);
+
+$color-primary-1: #6d79e8;
+$color-primary-2: #9098de;
+$color-primary-3: #bfc4ea;
+$color-primary-4: #f2f1ff;
+$color-primary-5: #f4f7ff;
+$color-primary-6: #1890FF;
+$color-secondary-1: #f2994a;
+$color-secondary-2: #4057d0;
+$color-secondary-3: #1625ab;
+$color-neutral-1: #343458;
+$color-neutral-2: #464962;
+$color-neutral-3: #5a5c6f;
+$color-neutral-4: #6d6f81;
+$color-neutral-5: #adaeba;
+$color-neutral-6: #e1e3e9;
+$color-neutral-7: #f3f4f8;
+$color-neutral-black: #212121;
+
+$color-background-1: #f5f5f9;
+$color-background-white: #fff;
+
+$color-text-black: #1b1b33;
+$color-text-white: #ffffff;
+
+$color-state-success: #439f6e;
+$color-state-warning: #ebbc2e;
+$color-state-info: #2f80ed;
+$color-state-error: #ed3a3a;
+$color-state-disabled: #5A5C6F;
+
+$color-gradient-1: linear-gradient(181.77deg, rgba(27, 27, 51, 0) 22.75%, #1b1b33 114.2%);
+$button-border-color: #adaeba;
+$color-violet-new: #4057d0;
+$color-violet-new-1: #6d79e8;
+$color-violet-new-1-opacity-30: #6d79e84d;
+$color-violet-new-1-filter: invert(53%) sepia(75%) saturate(3983%) hue-rotate(215deg)
+    brightness(99%) contrast(83%);
+$color-violet-new-2: #918ffd;
+$color-violet-03: #f1f5ff;
+$color-accent-violet-03: #f2f1ff;
+$color-violet-04: #d1e1ff;
+
+$color-gray-01: #1b1b33;
+$color-gray-01-opacity-60: #1b1b3399;
+$color-gray-01-opacity-80: #1b1b33cc;
+$color-gray-02: #464962;
+$color-gray-03: #6d6f81;
+$color-gray-3-5: #8f919f;
+$color-gray-3-5-opacity-20: #8f919f33;
+$color-gray-03-opacity-50: #0c103380;
+$color-gray-04: #e7e7ec;
+$color-gray-05: #f5f5f9;
+$color-gray-05-opacity-60: #f5f5f999;
+$color-blue: #2573e9;
+$color-blue-extra: #202b3f;
+$color-light-blue: #639ff9;
+$color-dark-blue: #004ec3;
+$color-blue-extra: #020b3f;
+$color-black: #000000;
+$color-white: #ffffff;
+$color-white-opacity-30: #ffffff4d;
+$color-white-filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(0deg)
+    brightness(200%) contrast(100%);
+$color-popper-box-shadow: rgba(34, 53, 89, 0.13);
+$color-polar-green: #52C41A;
+
+$margin-x-content-landing-page: 24px;

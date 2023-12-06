@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  easy-edu-frontend:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: easy-edu-frontend
+    container_name: easy-edu-frontend
+    restart: always
+    ports:
+      - 3010:3010
+    env_file:
+      - ./.env

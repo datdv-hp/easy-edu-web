@@ -1,0 +1,280 @@
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,600;0,800;1,400;1,500;1,600;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@200;300;400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans&display=swap');
+body {
+    font-family: $font-be-vietnam-pro;
+    margin: 0;
+
+    &::-webkit-scrollbar {
+        display: none;
+        visibility: hidden;
+        background-color: #fff;
+        width: 8px;
+        height: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        visibility: hidden;
+        background-color: $color-neutral-6;
+        border-radius: 6px;
+    }
+
+    &:hover::-webkit-scrollbar-thumb {
+        visibility: visible;
+    }
+}
+
+.bg-color-1 {
+    background-color: $color-background-1;
+}
+
+.bg-color-white {
+    background-color: $color-background-white;
+}
+
+@each $colorName, $color in $colors {
+    .bg--#{$colorName} {
+        background-color: $color;
+    }
+}
+
+@each $colorName, $color in $colors {
+    .text--#{$colorName} {
+        color: $color;
+    }
+}
+
+@each $roundedName, $rounded in $roundeds {
+    .rounded--#{$roundedName} {
+        border-radius: $rounded !important;
+    }
+}
+
+@each $name, $font-size in $font-sizes {
+    .fz-#{$name} {
+        font-size: $font-size !important;
+    }
+}
+
+@each $name, $opacity in $opacities {
+    .opacity-#{$name} {
+        opacity: $opacity !important;
+    }
+}
+
+@each $name, $font-weight in $font-weights {
+    .fw-#{$name} {
+        font-weight: $font-weight !important;
+    }
+}
+
+@each $name, $unit in $gaps {
+    .gap--#{$name} {
+        gap: $unit !important;
+    }
+    .lh--#{name} {
+        line-height: $unit !important;
+    }
+}
+
+@each $name, $width in $widths {
+    .w-#{$name} {
+        width: $width !important;
+    }
+    .h-#{$name} {
+        height: $width !important;
+    }
+    .maxW-#{$name} {
+        max-width: $width !important;
+    }
+    .maxH-#{$name} {
+        max-height: $width !important;
+    }
+
+    .minW-#{$name} {
+        min-width: $width !important;
+    }
+    .minH-#{$name} {
+        min-height: $width !important;
+    }
+}
+
+@each $name, $width in $widthsInPixel {
+    .w-#{$name} {
+        width: $width !important;
+    }
+    .h-#{$name} {
+        height: $width !important;
+    }
+    .maxW-#{$name} {
+        max-width: $width !important;
+    }
+    .maxH-#{$name} {
+        max-height: $width !important;
+    }
+
+    .minW-#{$name} {
+        min-width: $width !important;
+    }
+    .minH-#{$name} {
+        min-height: $width !important;
+    }
+}
+
+.text-h1,
+.text-h2,
+.text-h3,
+.text-h4,
+.text-h5,
+.text-h6 {
+    font-family: $font-be-vietnam-pro !important;
+}
+
+.text-black {
+    color: $color-text-black;
+}
+
+.text-white {
+    color: $color-text-black;
+}
+.text-form-label {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #343458;
+    margin-bottom: 8px;
+}
+
+.large-form-label {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    color: $color-text-black;
+    margin-bottom: 12px;
+}
+
+.v-label {
+    opacity: initial;
+}
+
+.ws-nowrap {
+    white-space: nowrap;
+}
+
+.dialog-confirm {
+    .v-overlay__scrim {
+        opacity: 0;
+    }
+}
+.v-table__wrapper {
+    tbody {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: #1b1b33;
+    }
+    thead {
+        th {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            color: #1b1b33 !important;
+        }
+    }
+}
+.profile-dialog {
+    .v-card-item {
+        padding: 24px 32px !important;
+        border-bottom: 1px solid #e1e3e9;
+    }
+    .dialog-footer {
+        padding: 28px 46px;
+        box-shadow: 0px -2px 4px rgba(22, 1, 1, 0.06);
+    }
+}
+
+.setting-dialog {
+    .v-card-text {
+        padding: 0 32px !important;
+    }
+    .v-card-item {
+        padding: 24px !important;
+    }
+    .dialog-footer {
+        padding: 14px 46px 24px;
+    }
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.cursor-default {
+    cursor: default !important;
+}
+
+.ellipsis-one-line {
+    overflow: hidden;
+    display: -webkit-box;
+    line-break: anywhere;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.custom-tabs {
+    margin: 0 16px 0px 16px;
+
+    .v-tab:not(.v-tab--selected) {
+        color: #5a5c6f;
+    }
+    .v-tab {
+        text-align: center;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 27px;
+        letter-spacing: 0;
+        text-transform: none;
+    }
+}
+.profile-title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    color: $color-text-black;
+}
+
+.overflow-scrollbar {
+    scrollbar-gutter: stable;
+    &::-webkit-scrollbar {
+        // display: block;
+        visibility: hidden;
+        background-color: #fff;
+        width: 8px;
+        height: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        visibility: hidden;
+        background-color: $color-neutral-6;
+        border-radius: 6px;
+    }
+
+    &:hover::-webkit-scrollbar-thumb {
+        visibility: visible;
+    }
+}
+
+.readonly-email {
+    .v-field__input {
+        min-height: 24px !important;
+        padding-top: 0 !important;
+        color: $color-text-black;
+    }
+}
+
+.box {
+    box-shadow: 0px 4px 8px 0px rgba(142, 141, 208, 0.16) !important;
+    border: 1px solid $color-neutral-6;
+}

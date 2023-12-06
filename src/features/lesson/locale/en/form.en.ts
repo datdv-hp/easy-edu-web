@@ -1,0 +1,23 @@
+export default {
+  lesson: {
+    name: 'Lesson name',
+    room: 'Room',
+    teacher: 'Teacher',
+    classroom: 'Classroom',
+    subject: 'Subject',
+    courses: 'Course(s)',
+    totalStudents: 'Total students',
+    documents: 'Document(s)',
+    meetUrl: 'Lesson link',
+    studentIds: 'Student(s)',
+    timeList: 'Lesson time',
+    startDate: 'Start date',
+    startTime: 'Start time',
+    endTime: 'End time',
+    endDate: 'End date',
+    repeatOption: 'Repeat option',
+    repeatDays: 'Repeat day(s)',
+    syllabus: 'Syllabus',
+    lecture: 'Lecture',
+  },
+};

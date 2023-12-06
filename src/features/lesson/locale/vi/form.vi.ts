@@ -1,0 +1,23 @@
+export default {
+  lesson: {
+    name: 'Tên buổi học',
+    room: 'Phòng học',
+    teacher: 'Giảng viên',
+    classroom: 'Lớp học',
+    subject: 'Học phần',
+    courses: 'Khóa học',
+    totalStudents: 'Tổng số học viên',
+    documents: 'Tài liệu',
+    meetUrl: 'Link buổi học',
+    studentIds: 'Thêm học viên',
+    timeList: 'Thời gian học',
+    startDate: 'Ngày bắt đầu',
+    startTime: 'Giờ bắt đầu',
+    endTime: 'Giờ kết thúc',
+    endDate: 'Ngày kết thúc',
+    repeatOption: 'Tùy chọn lặp lại',
+    repeatDays: 'Ngày lặp lại',
+    syllabus: 'Giáo trình',
+    lecture: 'Bài giảng',
+  },
+};
