@@ -1,6 +1,6 @@
 import authEn from './en/auth.en';
-import authVi from './vi/auth.vi';
 import userProfileEn from './en/user-profile.en';
+import authVi from './vi/auth.vi';
 import userProfileVi from './vi/user-profile.vi';
 const auth = {
   en: authEn,

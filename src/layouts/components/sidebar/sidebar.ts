@@ -41,6 +41,13 @@ export const sidebarItems = () => {
             activeRouteNames: [PageName.STUDENT_LIST_PAGE, PageName.STUDENT_DETAIL_PAGE],
             role: role?.student?.view,
           },
+          {
+            title: t('app.sidebar.userManagement.registration.name'),
+            icon: '$sidebar.student',
+            routeName: PageName.REGISTRATION_LIST_PAGE,
+            activeRouteNames: [PageName.REGISTRATION_LIST_PAGE],
+            role: role?.course?.view,
+          },
         ].filter((item) => item.role),
         role: role?.student?.view || role?.teacher?.view || role?.manager?.view,
       },

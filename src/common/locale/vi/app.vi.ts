@@ -19,6 +19,9 @@ const appVi = {
         attendance: 'Điểm danh',
         list: 'Danh sách học viên',
       },
+      registration: {
+        name: 'Đăng ký tư vấn'
+      }
     },
     trainingManagement: {
       groupName: 'Quản lý chương trình đào tạo',

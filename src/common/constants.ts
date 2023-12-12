@@ -1,5 +1,7 @@
 export enum PageName {
   LOGIN_PAGE = 'login_page',
+  REGISTRATION_PAGE = 'registration_page',
+  REGISTRATION_LIST_PAGE = 'registration_list_page',
   PROFILE_PAGE = 'profile_page',
   DASHBOARD_PAGE = 'dashboard_page',
   NOT_FOUND_PAGE = 'not_found_page',

@@ -1,5 +1,4 @@
-import { Regex } from '@/common/constants';
-import { FORM_VALIDATION } from '@/common/constants';
+import { FORM_VALIDATION, Regex } from '@/common/constants';
 import yup from '@/plugins/yup';
 
 const emailSchema = yup.string().required().matches(Regex.EMAIL);

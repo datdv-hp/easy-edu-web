@@ -23,6 +23,10 @@ const authVi = {
     login: 'Đăng nhập',
     loginWithGoogle: 'Đăng nhập với Google',
   },
+  register: {
+    contact: 'Đăng ký nhận tư vấn',
+    noAccount: 'Chưa có tài khoản?',
+  },
   success: {
     login: 'Đăng nhập thành công',
     updatePassword: 'Cập nhật mật khẩu thành công',
