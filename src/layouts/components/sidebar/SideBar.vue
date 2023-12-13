@@ -42,8 +42,12 @@ const toggleCollapse = () => {
     <v-list class="sidebar-items pr-0" :nav="true" :lines="false" color="primary">
       <template v-for="(group, groupIndex) in sidebar" :key="groupIndex">
         <template v-if="group.groupName">
-          <v-list-subheader v-show="!rail" :title="group.groupName" />
-          <v-divider v-if="groupIndex" class="mx-auto my-2" :length="48" v-show="rail" />
+          <v-list-subheader
+            :class="{ 'mt-4': groupIndex }"
+            v-show="!rail"
+            :title="group.groupName"
+          />
+          <v-divider v-if="groupIndex" class="mx-auto my-4" :length="48" v-show="rail" />
         </template>
         <template v-for="(item, _) in group.items" :key="_">
           <component
@@ -133,7 +137,7 @@ const toggleCollapse = () => {
 
 .sidebar-items {
   height: calc(100vh - 122px);
-  overflow: scroll;
+  overflow-y: scroll;
   padding-right: 4px !important;
   scrollbar-gutter: stable;
   &::-webkit-scrollbar {
