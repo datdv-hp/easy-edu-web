@@ -15,6 +15,7 @@ import {
   TableBase,
   TableHeader,
 } from '@/components';
+import StatusDot from '@/components/StatusDot.vue';
 import { useStudentStore } from '@/features/student/stores';
 import { showDialogConfirm } from '@/plugins';
 import { onBeforeUnmount } from 'vue';
@@ -187,12 +188,7 @@ onBeforeUnmount(() => {
           <EllipsisTableData :text="item.email" />
           <td>
             <div class="d-flex align-center ws-nowrap status">
-              <div
-                class="dot"
-                :style="{
-                  backgroundColor: UserStatusColor[item.status],
-                }"
-              ></div>
+              <StatusDot :color="UserStatusColor[item.status]" />
               <div>{{ $t(`common.userStatus.${item.status}`) }}</div>
               <v-img
                 @click.stop="handleClickResend(item.id, index)"

@@ -1,5 +1,7 @@
 .v-tooltip {
     .v-overlay__content {
         max-width: 500px !important;
+        padding: 2px 6px;
+        font-size: 12px;
     }
 }

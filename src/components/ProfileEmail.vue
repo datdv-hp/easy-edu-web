@@ -26,7 +26,7 @@ const onClickResend = () => {
 
 <template>
   <div>
-    <div class="info-title d-flex align-center mb-2 gap--3 ws-nowrap">
+    <div class="info-title d-flex align-center mb-2 gap-3 ws-nowrap">
       <img :src="icon" />
       <div>
         <span>{{ title }}</span>
@@ -42,7 +42,7 @@ const onClickResend = () => {
         />
       </div>
     </div>
-    <div class="d-flex align-center gap--4">
+    <div class="d-flex align-center gap-4">
       <span class="info-description">{{ description }}</span>
     </div>
   </div>

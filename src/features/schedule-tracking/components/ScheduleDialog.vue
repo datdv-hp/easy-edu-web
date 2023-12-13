@@ -213,7 +213,7 @@ onBeforeUnmount(() => {
   >
     <template v-slot:append>
       <div class="d-flex">
-        <span class="mr-3 d-flex gap--1">
+        <span class="mr-3 d-flex gap-1">
           <CircleIcon
             v-if="role.schedule?.updateLesson"
             class="cursor-pointer"
@@ -242,14 +242,14 @@ onBeforeUnmount(() => {
       <span class="schedule-title">{{ store.detail?.subject?.name }}</span>
       <span class="schedule-subtitle">{{ store.detail?.name }}</span>
     </div>
-    <div class="d-flex flex-column gap--4">
-      <div class="d-flex align-center gap--5">
+    <div class="d-flex flex-column gap-4">
+      <div class="d-flex align-center gap-5">
         <span>
           <CircleIcon :icon="icons.schClockRed" size="small" bg-color="#FFF1F4" />
         </span>
         <span>{{ store.detail?.dateTime }}</span>
       </div>
-      <div class="d-flex align-center gap--5">
+      <div class="d-flex align-center gap-5">
         <span>
           <CircleIcon :icon="icons.schClassroomGreen" size="small" bg-color="#E4F8F2" />
         </span>
@@ -258,7 +258,7 @@ onBeforeUnmount(() => {
           <span>{{ store.detail?.classroom?.name }}</span>
         </span>
       </div>
-      <div class="d-flex align-center gap--5">
+      <div class="d-flex align-center gap-5">
         <span>
           <CircleIcon :icon="icons.schTeacherOrange" size="small" bg-color="#FEF2ED" />
         </span>
@@ -268,7 +268,7 @@ onBeforeUnmount(() => {
         </span>
       </div>
       <div>
-        <div class="d-flex align-center gap--5">
+        <div class="d-flex align-center gap-5">
           <span>
             <CircleIcon :icon="icons.schDocumentBlue" size="small" bg-color="#D5E9FA" />
           </span>
@@ -287,12 +287,12 @@ onBeforeUnmount(() => {
         </div>
       </div>
       <div>
-        <div class="d-flex align-center gap--5">
+        <div class="d-flex align-center gap-5">
           <span>
             <CircleIcon :icon="icons.schStudentPurple" size="small" bg-color="#F2F1FF" />
           </span>
           <div class="flex-1-1 d-flex align-center justify-space-between">
-            <div class="d-flex align-center gap--4">
+            <div class="d-flex align-center gap-4">
               <div class="title">
                 {{ $t('scheduleTracking.detail.student') }}
               </div>
@@ -303,7 +303,7 @@ onBeforeUnmount(() => {
                 text-color="primary"
               />
             </div>
-            <div v-if="role.schedule?.attendance" class="d-flex align-center gap--2">
+            <div v-if="role.schedule?.attendance" class="d-flex align-center gap-2">
               <span class="fz-3_5 fw-500 text--neutral-2">{{
                 _isLessonCompleted
                   ? $t('scheduleTracking.detail.attendance')
@@ -327,7 +327,7 @@ onBeforeUnmount(() => {
           <CollapseList :items="store.studentList || []">
             <template #item="{ item }: { item: IStudentInLesson }">
               <div class="d-flex align-center justify-space-between">
-                <div class="ellipsis-one-line d-flex align-center gap--3 my-3 flex-1-1">
+                <div class="ellipsis-one-line d-flex align-center gap-3 my-3 flex-1-1">
                   <div>
                     <v-img
                       class="rounded-circle"
@@ -408,7 +408,7 @@ onBeforeUnmount(() => {
           />
         </div>
       </div>
-      <div class="d-flex align-center gap--5">
+      <div class="d-flex align-center gap-5">
         <span>
           <CircleIcon :icon="icons.schLocationYellow" size="small" bg-color="#FFF8E7" />
         </span>

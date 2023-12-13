@@ -55,7 +55,6 @@ export const useRegistrationStore = defineStore('registration', () => {
   const listQuery = computed(() => _listQuery);
   const total = computed(() => _total.value);
   const selectedIds = computed(() => _selectedIds);
-  const isSelectedId = computed(() => (id: string) => _selectedIds.has(id));
   const isEmptySelected = computed(() => _selectedIds.size === 0);
   const isAllSelected = computed(() => _selectedIds.size === list.value.length);
   const totalPages = computed(
@@ -130,7 +129,6 @@ export const useRegistrationStore = defineStore('registration', () => {
     listQuery,
     total,
     selectedIds,
-    isSelectedId,
     isEmptySelected,
     isAllSelected,
     totalPages,

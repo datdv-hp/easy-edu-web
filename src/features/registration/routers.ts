@@ -30,7 +30,7 @@ const registrationRouters: Array<RouteRecordRaw> = [
         component: RegistrationListPage,
         meta: {
           requiresAuth: true,
-          role: ['course.view'],
+          role: ['registration.view'],
         },
       },
     ],

@@ -61,6 +61,7 @@ const isValidSubmit = computed(() => {
 });
 
 onMounted(async () => {
+  dialogStore.isFetching = true;
   // lấy danh sách dropdown của khóa học.
   await Promise.all([
     store.getCourseOptions(),
@@ -69,7 +70,6 @@ onMounted(async () => {
   ]);
   // lấy ra thông tin học viên chỉnh sửa
   if (isUpdate.value) {
-    dialogStore.isFetching = true;
     const response = await studentApiService.detail(dialogStore.currentId as string);
     if (response.success) {
       const student = convertToStudent(response.data as any);
@@ -114,7 +114,19 @@ onMounted(async () => {
       handleCloseDialog();
     }
     goToListPage();
+  } else {
+    if (dialogStore.initialValues) {
+      setValues(
+        {
+          picName: dialogStore.initialValues?.name,
+          email: dialogStore.initialValues?.email,
+          phone: dialogStore.initialValues?.phone,
+        },
+        false,
+      );
+    }
   }
+  dialogStore.isFetching = false;
 });
 
 const goToListPage = () => {
@@ -165,6 +177,7 @@ const handleClickCreate = handleSubmit(async (values) => {
   const res = await studentApiService.create({
     ...values,
     name: values.picName,
+    registrationId: dialogStore.initialValues?.id,
   });
   if (res.success) {
     showSuccessNotification(t('student.notification.success.createStudent'));
@@ -228,7 +241,7 @@ function submit() {
       <v-col cols="6" class="py-2">
         <AvatarForm :value="avatar as string" @avatar-change="updateAvatar" />
       </v-col>
-      <v-col cols="6" class="d-flex flex-column gap--4 py-2">
+      <v-col cols="6" class="d-flex flex-column gap-4 py-2">
         <InputText
           name="picName"
           :label="$t('common.form.name.label')"

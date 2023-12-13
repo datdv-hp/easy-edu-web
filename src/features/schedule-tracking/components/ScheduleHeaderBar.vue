@@ -209,7 +209,7 @@ const datePickerOptions = computed(() => {
 <template>
   <header-bar :title="$t('scheduleTracking.filterForm.classroom.placeholder')">
     <template #title>
-      <div class="d-flex gap--2 align-center time-control py-1">
+      <div class="d-flex gap-2 align-center time-control py-1">
         <div class="title">
           <span>{{ $t('scheduleTracking.title') }}</span>
         </div>
@@ -275,7 +275,7 @@ const datePickerOptions = computed(() => {
       >
     </v-btn-toggle>
     <v-menu></v-menu>
-    <div class="d-flex gap--4 justify-end align-center filter-form">
+    <div class="d-flex gap-4 justify-end align-center filter-form">
       <div class="flex-1-1 dropdown-filter-wrap">
         <BaseAutoComplete
           name="classroomIds"

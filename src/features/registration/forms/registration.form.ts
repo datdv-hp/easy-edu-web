@@ -1,4 +1,4 @@
-import { showSuccessNotification } from '@/common/helpers';
+import { showErrorNotification, showSuccessNotification } from '@/common/helpers';
 import { FieldState, useField, useForm } from 'vee-validate';
 import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
@@ -45,9 +45,10 @@ export const useRegisterForm = () => {
       phone: values.phone,
     });
     if (res.success) {
-      showSuccessNotification(t('registration.success'));
+      showSuccessNotification(t('registration.success.create'));
       return true;
     }
+    showErrorNotification(t('registration.error.create'));
     return false;
   });
 

@@ -53,7 +53,7 @@ withDefaults(defineProps<Props>(), {
         <slot></slot>
       </v-card-text>
       <v-card-actions v-if="!hideFooter" class="dialog-footer">
-        <v-row v-if="!hideActionButtons" class="d-flex justify-end gap--4">
+        <v-row v-if="!hideActionButtons" class="d-flex justify-end gap-4">
           <BaseButton
             size="medium"
             variant="outline"

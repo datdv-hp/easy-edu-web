@@ -10,9 +10,7 @@ export const sidebarItems = () => {
 
   const viewSettingPermission = computed(
     () =>
-      role.role?.view ||
-      role.courseFormSetting?.view ||
-      role.settingTimekeeping?.view,
+      role.role?.view || role.courseFormSetting?.view || role.settingTimekeeping?.view,
   );
 
   const _sidebarItems = computed<ISidebarGroup[]>(() =>
@@ -43,13 +41,17 @@ export const sidebarItems = () => {
           },
           {
             title: t('app.sidebar.userManagement.registration.name'),
-            icon: '$sidebar.student',
+            icon: '$user.user-circle-add',
             routeName: PageName.REGISTRATION_LIST_PAGE,
             activeRouteNames: [PageName.REGISTRATION_LIST_PAGE],
-            role: role?.course?.view,
+            role: role?.registration?.view,
           },
         ].filter((item) => item.role),
-        role: role?.student?.view || role?.teacher?.view || role?.manager?.view,
+        role:
+          role?.student?.view ||
+          role?.teacher?.view ||
+          role?.manager?.view ||
+          role?.registration?.view,
       },
       {
         groupName: t('app.sidebar.trainingManagement.groupName'),

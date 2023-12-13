@@ -41,7 +41,7 @@ const onToggleOrderDirection = () => {
       minWidth,
     }"
   >
-    <div class="d-flex align-center gap--2">
+    <div class="d-flex align-center gap-2">
       <span class="text-left ws-nowrap">{{ title }}</span>
       <div class="oder-direction-icon">
         <v-img width="8" class="order-direction desc" :src="iconDESC"></v-img>

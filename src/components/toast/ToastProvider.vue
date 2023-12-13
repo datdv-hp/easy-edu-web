@@ -32,31 +32,38 @@ const { toasts, removeToast } = useToasts();
 .toasts {
   z-index: 2500;
   position: fixed;
-  top: 0.5rem;
-  right: 0.5rem;
+  top: 0.8rem;
+  right: 50%;
+  transform: translateX(50%);
   display: flex;
   flex-direction: column-reverse;
   gap: 0.8rem;
 }
 
 .toast-enter-active {
-  animation: toast-slide-in 0.5s ease;
+  animation: toast-slide-in 0.3s ease;
 }
 .toast-leave-active {
-  animation: toast-slide-in 0.5s ease reverse;
+  animation: toast-fade-out 0.5s ease;
 }
 
 @keyframes toast-slide-in {
   from {
-    right: -100%;
-  }
-
-  80% {
-    right: 0.8rem;
+    top: -0.8rem;
   }
 
   to {
-    right: 0rem;
+    top: 0;
+  }
+}
+
+@keyframes toast-fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
   }
 }
 </style>

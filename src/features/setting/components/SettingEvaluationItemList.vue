@@ -172,7 +172,7 @@ onBeforeUnmount(() => {
     <v-row>
       <v-col
         cols="12"
-        class="d-flex align-start gap--4"
+        class="d-flex align-start gap-4"
         v-for="(_, index) in form.contents"
         :key="index"
       >
@@ -236,7 +236,7 @@ onBeforeUnmount(() => {
           <div class="wrapper">
             <v-col
               cols="12"
-              class="d-flex align-end gap--4"
+              class="d-flex align-end gap-4"
               v-for="(_, _index) in listContent.contents"
               :key="_index"
             >

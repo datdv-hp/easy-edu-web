@@ -94,7 +94,7 @@ onMounted(() => {
 </script>
 <template>
   <div class="lesson-time-item">
-    <div class="d-flex gap--4 align-start mb-2 lesson-time">
+    <div class="d-flex gap-4 align-start mb-2 lesson-time">
       <div class="start-date">
         <DatePicker
           :name="`timeList[${index}].startDate`"

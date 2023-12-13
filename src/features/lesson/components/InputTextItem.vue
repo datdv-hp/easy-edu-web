@@ -31,7 +31,7 @@ const onClickButtonAction = (index: number) => {
 </script>
 
 <template>
-  <div class="d-flex align-end gap--4">
+  <div class="d-flex align-end gap-4">
     <InputText
       :name="name"
       :label="index === 0 ? label : undefined"

@@ -126,7 +126,7 @@ onUnmounted(() => {
     >
       <template #prepend>
         <template v-if="store.isShowLectureActions">
-          <div class="d-flex align-center gap--1 ml-3">
+          <div class="d-flex align-center gap-1 ml-3">
             <v-icon
               v-if="role.syllabus?.delete"
               class="action-icon"

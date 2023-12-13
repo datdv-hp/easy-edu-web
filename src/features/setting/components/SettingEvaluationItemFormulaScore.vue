@@ -124,7 +124,7 @@ onBeforeUnmount(() => {
     <v-row>
       <v-col
         cols="12"
-        class="d-flex align-start gap--4"
+        class="d-flex align-start gap-4"
         v-for="(_, index) in form.scores"
         :key="index"
       >

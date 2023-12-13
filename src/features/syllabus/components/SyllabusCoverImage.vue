@@ -60,7 +60,7 @@ function closePreviewImage() {
   <div class="large-form-label mb-4">
     {{ $t('syllabus.form.image.label') }}
   </div>
-  <div class="d-flex align-center gap--5">
+  <div class="d-flex align-center gap-5">
     <div>
       <v-img
         class="mx-auto"

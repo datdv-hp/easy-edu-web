@@ -76,8 +76,7 @@ const close = () => {
   max-width: 456px;
   position: relative;
   background: white;
-  // box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.08), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
-  //     0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: -3px 7px 24px 0px #00000033;
   transition: all 0.2s ease-in-out;
   border-radius: 4px;
 }
@@ -85,6 +84,12 @@ const close = () => {
 :deep(.v-alert) {
   border: 1px solid transparent;
   padding: 12px 16px;
+  background-color: $color-white !important;
+  opacity: 0.8;
+  transition: opacity 0.15s ease-in-out;
+  &:hover {
+    opacity: 1;
+  }
   .v-alert__prepend {
     margin-top: 3px;
     margin-right: 10px;
@@ -93,6 +98,10 @@ const close = () => {
     margin-left: 14px;
     margin-top: 4px;
     color: $color-neutral-5;
+    transition: all 0.15s ease-in-out;
+    &:hover {
+      color: $color-text-black;
+    }
 
     .v-btn__overlay,
     .v-btn__underlay {
@@ -108,33 +117,24 @@ const close = () => {
 }
 
 :deep(.bg-success) {
-  border-color: $color-state-success;
-  background-color: rgba(241, 255, 244, 1) !important;
   .v-alert__prepend {
     color: $color-state-success;
   }
 }
 
 :deep(.bg-info) {
-  border-color: $color-state-info;
-  background-color: rgba(243, 247, 254, 1) !important;
-
   .v-alert__prepend {
     color: $color-state-info;
   }
 }
 
 :deep(.bg-warning) {
-  border-color: $color-state-warning;
-  background-color: rgba(255, 251, 241, 1) !important;
   .v-alert__prepend {
     color: $color-state-warning;
   }
 }
 
 :deep(.bg-error) {
-  border-color: $color-state-error;
-  background-color: rgba(255, 245, 245, 1) !important;
   .v-alert__prepend {
     color: $color-state-error;
   }

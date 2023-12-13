@@ -35,6 +35,7 @@ export interface ICreateStudentForm {
   avatar?: string;
   roleId: string;
   studentDetail: IStudentDetail;
+  registrationId?: string;
 }
 
 export interface IUpdateStudentForm {
@@ -59,3 +60,10 @@ export interface IStudentCourse {
   startDate: string;
   endDate: string;
 }
+
+export type IStudentRegistrationInfo = {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+};

@@ -113,7 +113,7 @@ const checkAllModelValue = computed(() => {
     :value="name"
   >
     <template #title>
-      <div class="d-flex align-center gap--2">
+      <div class="d-flex align-center gap-2">
         <v-checkbox
           density="compact"
           color="primary"

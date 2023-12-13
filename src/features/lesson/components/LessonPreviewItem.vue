@@ -7,7 +7,7 @@ defineProps<{
 }>();
 </script>
 <template>
-  <div class="d-flex align-center gap--2_5">
+  <div class="d-flex align-center gap-2_5">
     <span>{{ item.startTime }}</span>
     <span class="dash"></span>
     <span>{{ item.endTime }}</span>

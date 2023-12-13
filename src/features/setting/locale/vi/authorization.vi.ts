@@ -35,6 +35,7 @@ export default {
     evaluationClassifiedSetting: 'Cài đặt xếp loại',
     evaluationCriteriaSetting: 'Cài đặt tiêu chí',
     settingTimekeeping: 'Cài đặt ngày chốt công',
+    registration: 'Đăng ký tư vấn',
   },
   permissions: {
     user: {
@@ -165,6 +166,11 @@ export default {
       update: 'Chỉnh sửa',
       delete: 'Xóa',
       create: 'Tạo mới',
+    },
+    registration: {
+      view: 'Xem',
+      createStudent: 'Thêm mới học viên',
+      delete: 'Xóa',
     },
     all: 'Tất cả',
   },

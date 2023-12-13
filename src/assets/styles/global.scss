@@ -69,10 +69,10 @@ body {
 }
 
 @each $name, $unit in $gaps {
-    .gap--#{$name} {
+    .gap-#{$name} {
         gap: $unit !important;
     }
-    .lh--#{name} {
+    .lh-#{name} {
         line-height: $unit !important;
     }
 }

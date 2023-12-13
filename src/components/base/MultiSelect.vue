@@ -69,7 +69,7 @@ onMounted(() => {
 });
 </script>
 <template>
-  <div class="d-flex flex-column select-wrapper gap--1">
+  <div class="d-flex flex-column select-wrapper gap-1">
     <label v-if="label" class="text-form-label">
       {{ label }}
       <span v-if="isRequired" class="mark-required">*</span>

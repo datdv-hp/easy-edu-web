@@ -14,13 +14,11 @@ import { authApi } from '../services/auth.api';
 import { userApiService } from '../services/user.api';
 
 export const useUserStore = defineStore('userStore', () => {
-  const userRole = ref();
+  const userRole = ref<IUserRole>();
   const isFetching = ref(false);
   const isShowDialogChangePassword = ref(false);
+  const profile = ref(localStorageAuthService.getLoginUser());
 
-  const profile = computed(() => {
-    return localStorageAuthService.getLoginUser();
-  });
   const isMaster = computed(() => {
     return (profile.value as IMaster)?.userRole === Role.MASTER;
   });
@@ -29,9 +27,11 @@ export const useUserStore = defineStore('userStore', () => {
     isFetching.value = true;
     const response: IBodyResponse<IUserProfile> = await authApi._getOwnProfile();
     if (response.success) {
-      const profile = convertToUser(response.data);
-      const userRole = response.data?.features as IUserRole;
-      localStorageAuthService.setLoginUser(profile, userRole);
+      const _profile = convertToUser(response.data);
+      const _userRole = response.data?.features as IUserRole;
+      profile.value = _profile;
+      userRole.value = _userRole;
+      localStorageAuthService.setLoginUser(_profile, _userRole);
     }
     isFetching.value = false;
     return response;

@@ -75,6 +75,7 @@ export function getStudentCreateFormData(
       degree: get(data, 'studentDetail.degree') as StudentDegree,
       courses: get(data, 'studentDetail.courses', []) as ICourseDetail[],
     },
+    registrationId: get(data, 'registrationId') as string,
   };
 }
 

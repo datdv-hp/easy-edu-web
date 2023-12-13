@@ -198,6 +198,12 @@ export interface ISyllabusPermission extends IBasePermission {
   download?: boolean;
 }
 
+export type IRegistrationPermission = {
+  view?: boolean;
+  createStudent?: boolean;
+  delete?: boolean;
+};
+
 export interface IUserRole {
   classroom?: IClassroomPermission;
   course?: ICoursePermission;
@@ -215,4 +221,5 @@ export interface IUserRole {
   evaluationClassifiedSetting?: IBasePermission;
   evaluationCriteriaSetting?: IBasePermission;
   settingTimekeeping?: IBasePermission;
+  registration?: IRegistrationPermission;
 }

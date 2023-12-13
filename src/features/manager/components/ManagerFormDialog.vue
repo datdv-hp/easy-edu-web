@@ -232,7 +232,7 @@ function submit() {
       <v-col cols="6" class="py-2">
         <AvatarForm :value="avatar as string" @avatar-change="updateAvatar" />
       </v-col>
-      <v-col cols="6" class="d-flex flex-column gap--4 py-2">
+      <v-col cols="6" class="d-flex flex-column gap-4 py-2">
         <InputText
           name="name"
           :label="t('common.form.name.label')"

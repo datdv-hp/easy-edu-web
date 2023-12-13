@@ -1,73 +1,73 @@
+import { useUserStore } from '@/features/auth/stores';
 import { defineStore } from 'pinia';
 import { computed } from 'vue';
-import localStorageAuthService from '../storages/authStorage';
 
 export const useRole = defineStore('role-store', () => {
-  const _role = computed(() => {
-    const role = localStorageAuthService.getUserRole();
-    return role;
-  });
+  const userStore = useUserStore();
+  const _role = computed(() => userStore.userRole);
   const teacher = computed(() => {
-    return _role.value.teacher;
+    return _role.value?.teacher;
   });
 
   const student = computed(() => {
-    return _role.value.student;
+    return _role.value?.student;
   });
 
   const manager = computed(() => {
-    return _role.value.manager;
+    return _role.value?.manager;
   });
 
   const classroom = computed(() => {
-    return _role.value.classroom;
+    return _role.value?.classroom;
   });
 
   const course = computed(() => {
-    return _role.value.course;
+    return _role.value?.course;
   });
 
   const lesson = computed(() => {
-    return _role.value.lesson;
+    return _role.value?.lesson;
   });
 
   const user = computed(() => {
-    return _role.value.user;
+    return _role.value?.user;
   });
 
   const schedule = computed(() => {
-    return _role.value.schedule;
+    return _role.value?.schedule;
   });
 
   const subject = computed(() => {
-    return _role.value.subject;
+    return _role.value?.subject;
   });
 
   const timekeeping = computed(() => {
-    return _role.value.timekeeping;
+    return _role.value?.timekeeping;
   });
 
   const role = computed(() => {
-    return _role.value.role;
+    return _role.value?.role;
   });
 
   const syllabus = computed(() => {
-    return _role.value.syllabus;
+    return _role.value?.syllabus;
   });
 
   const courseFormSetting = computed(() => {
-    return _role.value.courseFormSetting;
+    return _role.value?.courseFormSetting;
   });
 
   const evaluationClassifiedSetting = computed(() => {
-    return _role.value.evaluationClassifiedSetting;
+    return _role.value?.evaluationClassifiedSetting;
   });
   const evaluationCriteriaSetting = computed(() => {
-    return _role.value.evaluationCriteriaSetting;
+    return _role.value?.evaluationCriteriaSetting;
   });
   const settingTimekeeping = computed(() => {
-    return _role.value.settingTimekeeping;
+    return _role.value?.settingTimekeeping;
   });
+
+  const registration = computed(() => _role.value?.registration);
 
   return {
     teacher,
@@ -86,5 +86,6 @@ export const useRole = defineStore('role-store', () => {
     evaluationClassifiedSetting,
     evaluationCriteriaSetting,
     settingTimekeeping,
+    registration,
   };
 });

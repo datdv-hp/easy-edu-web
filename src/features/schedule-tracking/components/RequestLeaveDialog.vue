@@ -138,7 +138,7 @@ onMounted(() => {
       <span class="reason-title">{{ $t('scheduleTracking.reason.title') }}</span>
     </template>
     <template #actions>
-      <v-row class="gap--3">
+      <v-row class="gap-3">
         <template v-if="reasonDialogStore.isProcessLeave && role.schedule?.attendance">
           <BaseButton
             class="flex-1-1"

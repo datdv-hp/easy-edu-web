@@ -579,7 +579,7 @@ defineExpose({
           </template>
         </v-tooltip>
       </v-col>
-      <v-col cols="6" class="d-flex align-center gap--1 fz-4 fw-500 py-0">
+      <v-col cols="6" class="d-flex align-center gap-1 fz-4 fw-500 py-0">
         <span class="text--neutral-1">{{ $t('lesson.form.totalStudents') + ':' }}</span>
         <span class="text--neutral-4">{{ totalStudents }}</span>
       </v-col>
