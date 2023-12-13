@@ -66,9 +66,11 @@ export const useRole = defineStore('role-store', () => {
   const settingTimekeeping = computed(() => {
     return _role.value?.settingTimekeeping;
   });
+  const promotionSetting = computed(() => _role.value?.promotionSetting);
+  const paymentMethodSetting = computed(() => _role.value?.paymentMethodSetting);
 
   const registration = computed(() => _role.value?.registration);
-
+  const tuition = computed(() => _role.value?.tuition);
   return {
     teacher,
     student,
@@ -87,5 +89,8 @@ export const useRole = defineStore('role-store', () => {
     evaluationCriteriaSetting,
     settingTimekeeping,
     registration,
+    tuition,
+    promotionSetting,
+    paymentMethodSetting,
   };
 });

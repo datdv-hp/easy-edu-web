@@ -44,6 +44,7 @@ import InputStatusVue from './base/InputStatus.vue';
 import VideoPlayerVue from './VideoPlayer.vue';
 import EllipsisTableDataVue from './base/EllipsisTableData.vue';
 import BaseInputFileVue from './base/BaseInputFile.vue';
+import ActionIconVue from './ActionIcon.vue';
 
 export const AccordianMenu = AccordianMenuVue;
 export const BaseButton = BaseButtonVue;
@@ -91,3 +92,4 @@ export const VideoPlayer = VideoPlayerVue;
 export const ProfileRecordings = ProfileRecordingsVue;
 export const EllipsisTableData = EllipsisTableDataVue;
 export const BaseInputFile = BaseInputFileVue;
+export const ActionIcon = ActionIconVue;

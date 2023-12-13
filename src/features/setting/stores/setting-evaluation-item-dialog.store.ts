@@ -2,7 +2,7 @@ import { IBodyResponse } from '@/common/interfaces';
 import { defineStore } from 'pinia';
 import { computed } from 'vue';
 import { ref } from 'vue';
-import { IEvaluationItem } from '../interfaces';
+import { IEvaluationItem } from '../interfaces/setting-evaluation.interfaces';
 import { settingEvaluationApiService } from '../services/settingEvaluation.api';
 
 export const useSettingEvaluationItemDialog = defineStore(

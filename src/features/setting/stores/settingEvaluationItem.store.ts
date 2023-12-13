@@ -13,7 +13,7 @@ import {
 import { computed, reactive, ref } from 'vue';
 import { CourseOrderBy } from '@/features/courses/contants';
 import { courseApiService } from '@/features/courses/services/courses.api';
-import { IEvaluationItem, IEvaluationItemQuery } from '../interfaces';
+import { IEvaluationItem, IEvaluationItemQuery } from '../interfaces/setting-evaluation.interfaces';
 import { convertToOptions } from '@/common/helpers';
 import { settingEvaluationApiService } from '../services/settingEvaluation.api';
 

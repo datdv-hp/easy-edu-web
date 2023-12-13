@@ -11,6 +11,7 @@ import subject from './subject.svg?component';
 import syllabus from './syllabus.svg?component';
 import teacher from './teacher.svg?component';
 import timekeeping from './timekeeping.svg?component';
+import dollarCircle from './dollar-circle.svg?component';
 
 export default {
   classroom,
@@ -26,4 +27,5 @@ export default {
   syllabus,
   teacher,
   timekeeping,
+  'dollar-circle': dollarCircle,
 };

@@ -1,6 +1,6 @@
 import axiosService, { ApiService } from '@/plugins/axios';
 import { IBodyResponse, IGetListResponse } from '@/common/interfaces';
-import { IEvaluationItem, IEvaluationItemQuery } from '../interfaces';
+import { IEvaluationItem, IEvaluationItemQuery } from '../interfaces/setting-evaluation.interfaces';
 
 class SettingEvaluationApiService extends ApiService {
   getAllEvaluation(

@@ -5,8 +5,13 @@ import {
   showSuccessNotification,
 } from '@/common/helpers';
 import { useRole } from '@/common/stores';
-import { EllipsisTableData, LoadingOverlay, TableBase, TableHeader } from '@/components';
-import ActionIcon from '@/components/ActionIcon.vue';
+import {
+  ActionIcon,
+  EllipsisTableData,
+  LoadingOverlay,
+  TableBase,
+  TableHeader,
+} from '@/components';
 import StatusDot from '@/components/StatusDot.vue';
 import {
   RegistrationStatus,

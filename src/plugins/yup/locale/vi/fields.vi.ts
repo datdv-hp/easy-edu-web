@@ -7,6 +7,7 @@ import { syllabusForm } from '@/features/syllabus/locale/vi/syllabus.vi';
 import studentForm from '@/features/student/locale/vi/form.vi';
 import subjectForm from '@/features/subject/locale/vi/form.vi';
 import teacherDetail from '@/features/teacher/locale/vi/form.vi';
+import { tuitionFeeForm } from '@/features/tuition-fee/locale';
 
 export const yupFieldsVi = {
   name: 'Tên',
@@ -87,4 +88,5 @@ export const yupFieldsVi = {
   ...studentForm,
   authorizationForm,
   syllabusForm,
+  tuitionFeeForm: tuitionFeeForm.vi
 };

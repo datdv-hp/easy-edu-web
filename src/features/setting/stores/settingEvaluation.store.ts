@@ -12,9 +12,9 @@ import {
 } from '@/common/constants';
 import { computed, reactive, ref } from 'vue';
 import { CourseOrderBy } from '@/features/courses/contants';
-import { IEvaluationType } from '../interfaces';
+import { IEvaluationType } from '../interfaces/setting-evaluation.interfaces';
 import { settingEvaluationClassifiedApiService } from '../services/settingEvaluationClassified.api';
-import { convertToEvaluationTypeFormData } from '../helpers';
+import { convertToEvaluationTypeFormData } from '../helpers/setting-evaluation.helpers';
 
 export const useSettingEvaluationStore = defineStore('setting-evaluation', () => {
   const list = ref<IEvaluationType[]>([]);

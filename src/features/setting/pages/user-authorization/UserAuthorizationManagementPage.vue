@@ -15,7 +15,7 @@ import { useForm } from 'vee-validate';
 import { computed, onMounted, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { onBeforeRouteLeave } from 'vue-router';
-import { convertToRole } from '../../helpers';
+import { convertToRole } from '../../helpers/authorization.helpers';
 import { useAuthorizationStore } from '../../stores';
 import { RoleFormSchema } from '../../validations/authorization.validation';
 import ConfirmChangeDialog from './components/ConfirmChangeDialog.vue';

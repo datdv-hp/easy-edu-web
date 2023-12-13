@@ -1,6 +1,7 @@
-import axiosService, { ApiService } from '@/plugins/axios';
 import { IBodyResponse, IGetListResponse } from '@/common/interfaces';
-import { ICourseType, IEvaluationItemQuery } from '../interfaces';
+import axiosService, { ApiService } from '@/plugins/axios';
+import { ICourseType } from '../interfaces/setting-course.interfaces';
+import { IEvaluationItemQuery } from '../interfaces/setting-evaluation.interfaces';
 
 class SettingCourseApiService extends ApiService {
   getAllCourseType(

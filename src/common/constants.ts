@@ -33,6 +33,11 @@ export enum PageName {
   SETTING_EVALUATION_PAGE = 'setting_evaluation_page',
   SETTING_TIMEKEEPING_PAGE = 'setting_timekeeping_page',
   SETTING_USER_AUTHORIZATION = 'setting_user_authorization',
+  TUITION_FEE_DETAIL_PAGE = 'tuition_fee_detail_page',
+  TUITION_FEE_LIST_PAGE = 'tuition_fee_list_page',
+  PROMOTION_PROGRAMME_LIST_PAGE = 'promotion_programme_list_page',
+  PROMOTION_PROGRAMME_DETAIL_PAGE = 'promotion_programme_detail_page',
+  SETTING_PAYMENT_METHOD_LIST_PAGE = 'setting_payment_method_list_page',
 }
 
 export enum SupportLanguage {

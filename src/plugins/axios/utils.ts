@@ -8,11 +8,11 @@ export const logout = (redirectToLogin = true) => {
   const currentPage = router.currentRoute;
   if (redirectToLogin && currentPage.value.name !== PageName.LOGIN_PAGE) {
     sessionStorage.setItem('redirect', currentPage.value.fullPath);
-    router
-      .push({ name: PageName.LOGIN_PAGE })
-      // eslint-disable-next-line @typescript-eslint/no-empty-function
-      .catch(() => {});
   }
+  router
+    .push({ name: PageName.LOGIN_PAGE })
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    .catch(() => {});
 };
 
 export const sendRefreshToken = async () => {

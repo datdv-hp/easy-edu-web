@@ -10,6 +10,7 @@ import scheduleTrackingRoutes from '@/features/schedule-tracking/routers';
 import syllabusRoutes from '@/features/syllabus/routers';
 import settingRoutes from '@/features/setting/routers';
 import registrationRouters from '@/features/registration/routers';
+import tuitionRoutes from '@/features/tuition-fee/routers';
 // import dashboardRouters from '@/features/dashboard/routers';
 
 export const routers = [
@@ -26,4 +27,5 @@ export const routers = [
   ...syllabusRoutes,
   ...settingRoutes,
   ...registrationRouters,
+  ...tuitionRoutes,
 ];

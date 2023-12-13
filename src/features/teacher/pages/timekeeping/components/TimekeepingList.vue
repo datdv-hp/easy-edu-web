@@ -33,7 +33,7 @@ import { computed, onBeforeUnmount, onMounted, onUnmounted, ref, watch } from 'v
 import { useI18n } from 'vue-i18n';
 import { CheckMarkRenderer } from '../../../helpers';
 import { settingTimekeepingApiService } from '@/features/setting/services/settingTimekeeping.api';
-import { ITimeKeepingSetting } from '@/features/setting/interfaces';
+import { ITimeKeepingSetting } from '@/features/setting/interfaces/setting-timekeeping.interfaces';
 import { useRole } from '@/common/stores/role.store';
 
 const role = useRole();

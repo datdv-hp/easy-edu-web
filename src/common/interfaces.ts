@@ -204,6 +204,12 @@ export type IRegistrationPermission = {
   delete?: boolean;
 };
 
+export type ITuitionPermission = {
+  view?: boolean;
+  viewPersonal?: boolean;
+  update?: boolean;
+};
+
 export interface IUserRole {
   classroom?: IClassroomPermission;
   course?: ICoursePermission;
@@ -221,5 +227,8 @@ export interface IUserRole {
   evaluationClassifiedSetting?: IBasePermission;
   evaluationCriteriaSetting?: IBasePermission;
   settingTimekeeping?: IBasePermission;
+  promotionSetting?: IBasePermission;
+  paymentMethodSetting?: IBasePermission;
   registration?: IRegistrationPermission;
+  tuition?: ITuitionPermission;
 }

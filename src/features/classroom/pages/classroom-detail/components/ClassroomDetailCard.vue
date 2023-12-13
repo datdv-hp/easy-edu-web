@@ -23,13 +23,13 @@ const profile = computed(() => {
       isShow: true,
     },
     {
-      icon: Icons.classroom,
+      icon: Icons.description,
       title: t('classroom.detail.info.name'),
       description: store.detail?.name || '',
       isShow: true,
     },
     {
-      icon: Icons.teacher,
+      icon: Icons.description,
       title: t('classroom.detail.info.course'),
       description: store.detail?.course?.name || '',
       isShow: true,

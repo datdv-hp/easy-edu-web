@@ -3,7 +3,7 @@ import { BaseButton, BaseIconButton, InputNumber } from '@/components';
 import InputText from '@/components/base/InputText.vue';
 import { useForm } from 'vee-validate';
 import { computed, onBeforeUnmount, ref } from 'vue';
-import { IEvaluationRecipeScore } from '../interfaces';
+import { IEvaluationRecipeScore } from '../interfaces/setting-evaluation.interfaces';
 import { settingListRecipeScore } from '../schema';
 import { onMounted } from 'vue';
 import { useSettingEvaluationItemDialog } from '../stores/setting-evaluation-item-dialog.store';

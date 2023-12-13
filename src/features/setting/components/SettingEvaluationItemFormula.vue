@@ -5,7 +5,7 @@ import { useForm } from 'vee-validate';
 import { computed, onMounted, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { TypeScore } from '../constant';
-import { IEvaluationItemRecipe } from '../interfaces';
+import { IEvaluationItemRecipe } from '../interfaces/setting-evaluation.interfaces';
 import { settingListRecipe } from '../schema';
 import { useSettingEvaluationItemStore } from '../stores/settingEvaluationItem.store';
 import SettingEvaluationItemFormulaScore from './SettingEvaluationItemFormulaScore.vue';

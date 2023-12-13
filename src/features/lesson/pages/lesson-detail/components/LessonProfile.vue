@@ -31,19 +31,19 @@ const _profile = computed(() => {
       isShow: !!store.lessonInfo?.name,
     },
     {
-      icon: Icons.classroom,
+      icon: Icons.description,
       title: t('lesson.detail.info.classroom'),
       description: store.lessonInfo?.classroomName,
       isShow: !!store.lessonInfo?.classroomName,
     },
     {
-      icon: Icons.subject,
+      icon: Icons.description,
       title: t('lesson.detail.info.subject'),
       description: store.lessonInfo?.subjectName,
       isShow: !!store.lessonInfo?.subjectName,
     },
     {
-      icon: Icons.teacher,
+      icon: Icons.description,
       title: t('lesson.detail.info.teacher'),
       description: store.lessonInfo?.teacherName,
       isShow: !!store.lessonInfo?.teacherName,

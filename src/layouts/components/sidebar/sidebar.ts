@@ -10,8 +10,13 @@ export const sidebarItems = () => {
 
   const viewSettingPermission = computed(
     () =>
-      role.role?.view || role.courseFormSetting?.view || role.settingTimekeeping?.view,
-  );
+        role.role?.view ||
+        role.courseFormSetting?.view ||
+        role.evaluationClassifiedSetting?.view ||
+        role.evaluationCriteriaSetting?.view ||
+        role.settingTimekeeping?.view ||
+        role.promotionSetting?.view,
+);
 
   const _sidebarItems = computed<ISidebarGroup[]>(() =>
     [
@@ -142,6 +147,22 @@ export const sidebarItems = () => {
           role.timekeeping?.viewPersonal,
       },
       {
+        groupName: t('app.sidebar.finance.groupName'),
+        items: [
+            {
+                title: t('app.sidebar.finance.tuition'),
+                routeName: PageName.TUITION_FEE_LIST_PAGE,
+                icon: '$sidebar.dollar-circle',
+                activeRouteNames: [
+                    PageName.TUITION_FEE_LIST_PAGE,
+                    PageName.TUITION_FEE_DETAIL_PAGE,
+                ],
+                role: role.tuition?.view || role.tuition?.viewPersonal,
+            },
+        ],
+        role: role.tuition?.view || role.tuition?.viewPersonal,
+    },
+      {
         items: [
           {
             title: t('app.sidebar.setting.groupName'),
@@ -164,6 +185,21 @@ export const sidebarItems = () => {
                 routeName: PageName.SETTING_TIMEKEEPING_PAGE,
                 activeRouteNames: [PageName.SETTING_TIMEKEEPING_PAGE],
                 role: role.settingTimekeeping?.view,
+              },
+              {
+                title: t('app.sidebar.setting.promotionProgramme.name'),
+                routeName: PageName.PROMOTION_PROGRAMME_LIST_PAGE,
+                activeRouteNames: [
+                  PageName.PROMOTION_PROGRAMME_LIST_PAGE,
+                  PageName.PROMOTION_PROGRAMME_DETAIL_PAGE,
+                ],
+                role: role.promotionSetting?.view,
+              },
+              {
+                title: t('app.sidebar.setting.paymentMethod.name'),
+                routeName: PageName.SETTING_PAYMENT_METHOD_LIST_PAGE,
+                activeRouteNames: [PageName.SETTING_PAYMENT_METHOD_LIST_PAGE],
+                role: role.paymentMethodSetting?.view,
               },
             ].filter((item) => item.role),
             role: viewSettingPermission.value,

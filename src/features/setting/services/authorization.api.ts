@@ -1,6 +1,6 @@
 import { IBodyResponse, ICommonListQuery, IGetListResponse } from '@/common/interfaces';
 import axiosService, { ApiService } from '@/plugins/axios';
-import { convertToRoleFormData } from '../helpers';
+import { convertToRoleFormData } from '../helpers/authorization.helpers';
 
 class AuthorizationApiService extends ApiService {
   getList(

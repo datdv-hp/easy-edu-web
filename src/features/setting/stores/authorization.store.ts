@@ -6,8 +6,8 @@ import {
 import { ICommonListQuery } from '@/common/interfaces';
 import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
-import { convertToRole } from '../helpers';
-import { IDefaultFeature, IRoleInfo } from '../interfaces';
+import { convertToRole } from '../helpers/authorization.helpers';
+import { IDefaultFeature, IRoleInfo } from '../interfaces/authorization.interfaces';
 import { authorizationApiService } from '../services/authorization.api';
 import { isUndefined } from 'lodash';
 

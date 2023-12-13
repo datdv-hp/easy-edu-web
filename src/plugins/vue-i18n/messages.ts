@@ -17,7 +17,7 @@ import { yupFieldsVi } from '../yup/locale/vi/fields.vi';
 import { yupFieldsEn } from '../yup/locale/en/fields.en';
 import { userProfile } from '@/features/auth/locale';
 import { registration } from '@/features/registration/locale';
-
+import { tuitionFee } from '@/features/tuition-fee/locale';
 const messages = {
   vi: {
     app: app.vi,
@@ -40,6 +40,7 @@ const messages = {
     authorization: authorization.vi,
     userProfile: userProfile.vi,
     registration: registration.vi,
+    tuitionFee: tuitionFee.vi,
   },
   en: {
     app: app.en,
@@ -61,6 +62,7 @@ const messages = {
     authorization: authorization.en,
     userProfile: userProfile.en,
     registration: registration.en,
+    tuitionFee: tuitionFee.en,
   },
 };
 

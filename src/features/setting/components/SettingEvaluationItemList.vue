@@ -3,7 +3,7 @@ import icons from '@/assets/icons';
 import { BaseAutoComplete, BaseButton, BaseIconButton, InputText } from '@/components';
 import { useForm } from 'vee-validate';
 import { computed, onBeforeUnmount, ref } from 'vue';
-import { IEvaluationItemContent } from '../interfaces';
+import { IEvaluationItemContent } from '../interfaces/setting-evaluation.interfaces';
 import { settingListContent } from '../schema';
 import { useSettingEvaluationItemStore } from '../stores/settingEvaluationItem.store';
 import { onMounted } from 'vue';

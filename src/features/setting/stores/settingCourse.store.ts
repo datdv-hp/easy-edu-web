@@ -12,8 +12,9 @@ import {
 } from '@/common/constants';
 import { computed, reactive, ref } from 'vue';
 import { CourseOrderBy } from '@/features/courses/contants';
-import { ICourseType, IEvaluationType } from '../interfaces';
-import { convertToCourseTypeFormData } from '../helpers';
+import { ICourseType } from '../interfaces/setting-course.interfaces';
+import { IEvaluationType } from '../interfaces/setting-evaluation.interfaces';
+import { convertToCourseTypeFormData } from '../helpers/setting-course.helpers';
 import { settingCourseApiService } from '../services/settingCourse.api';
 
 export const useSettingCourseStore = defineStore('setting-course', () => {

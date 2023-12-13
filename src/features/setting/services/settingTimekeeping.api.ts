@@ -1,6 +1,6 @@
 import axiosService, { ApiService } from '@/plugins/axios';
 import { IBodyResponse } from '@/common/interfaces';
-import { ITimeKeepingSettingResponse } from '../interfaces';
+import { ITimeKeepingSettingResponse } from '../interfaces/setting-timekeeping.interfaces';
 
 class SettingTimekeepingApiService extends ApiService {
   getSettingTimekeeping(): Promise<IBodyResponse<ITimeKeepingSettingResponse>> {

@@ -1,4 +1,7 @@
 <script lang="ts" setup>
+import { useElementBounding, useElementSize } from '@vueuse/core';
+import { ref } from 'vue';
+
 interface Props {
   text?: string;
   location?: any;
@@ -6,14 +9,24 @@ interface Props {
 withDefaults(defineProps<Props>(), {
   location: 'top left',
 });
+
+const tableDataRef = ref<HTMLTableCellElement | null>(null);
+const textRef = ref<HTMLSpanElement | null>(null);
+const { height: tableDataHeight } = useElementSize(tableDataRef);
+const { height: textHeight } = useElementBounding(textRef);
 </script>
 <template>
   <td>
-    <v-tooltip :text="text" :open-delay="150" :location="location" v-if="!!text">
-      <template v-slot:activator="{ props }">
-        <span v-bind="props" class="ellipsis-one-line">{{ text }}</span>
-      </template>
-    </v-tooltip>
+    <span ref="tableDataRef" class="ellipsis-one-line">
+      <span ref="textRef">{{ text }}</span>
+      <v-tooltip
+        :text="text"
+        activator="parent"
+        :open-delay="150"
+        :location="location"
+        v-if="textHeight > tableDataHeight"
+      />
+    </span>
   </td>
 </template>
 <style lang="scss" scoped></style>

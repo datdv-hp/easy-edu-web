@@ -5,7 +5,7 @@ import { useAuthorizationStore } from '@/features/setting/stores';
 import { debounce } from 'lodash';
 import { computed, ref } from 'vue';
 import { VVirtualScroll } from 'vuetify/lib/components/index.mjs';
-import { IRoleInfo } from '../../../interfaces';
+import { IRoleInfo } from '../../../interfaces/authorization.interfaces';
 import { RoleType } from '@/common/constants';
 
 const emit = defineEmits(['change-detail', 'createRole']);
