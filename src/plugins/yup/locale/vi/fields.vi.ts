@@ -8,6 +8,8 @@ import studentForm from '@/features/student/locale/vi/form.vi';
 import subjectForm from '@/features/subject/locale/vi/form.vi';
 import teacherDetail from '@/features/teacher/locale/vi/form.vi';
 import { tuitionFeeForm } from '@/features/tuition-fee/locale';
+import { promotionFormVi } from '@/features/setting/locale/vi/promotion-programme.vi';
+import { paymentMethodFormVi } from '@/features/setting/locale/vi/payment-method.vi';
 
 export const yupFieldsVi = {
   name: 'Tên',
@@ -88,5 +90,7 @@ export const yupFieldsVi = {
   ...studentForm,
   authorizationForm,
   syllabusForm,
-  tuitionFeeForm: tuitionFeeForm.vi
+  tuitionFeeForm: tuitionFeeForm.vi,
+  promotion: promotionFormVi,
+  paymentMethodForm: paymentMethodFormVi,
 };

@@ -10,7 +10,12 @@ import classroom from '@/features/classroom/locale';
 import lesson from '@/features/lesson/locale';
 import scheduleTracking from '@/features/schedule-tracking/locale';
 import syllabus from '@/features/syllabus/locale';
-import { authorization, Settings } from '@/features/setting/locale';
+import {
+  authorization,
+  PaymentMethod,
+  PromotionProgramme,
+  Settings,
+} from '@/features/setting/locale';
 import { yupVi } from '../yup/locale/vi/vi';
 import { yupEn } from '../yup/locale/en/en';
 import { yupFieldsVi } from '../yup/locale/vi/fields.vi';
@@ -41,6 +46,8 @@ const messages = {
     userProfile: userProfile.vi,
     registration: registration.vi,
     tuitionFee: tuitionFee.vi,
+    promotionProgramme: PromotionProgramme.vi,
+    paymentMethod: PaymentMethod.vi,
   },
   en: {
     app: app.en,
@@ -63,6 +70,8 @@ const messages = {
     userProfile: userProfile.en,
     registration: registration.en,
     tuitionFee: tuitionFee.en,
+    promotionProgramme: PromotionProgramme.en,
+    paymentMethod: PaymentMethod.en,
   },
 };
 

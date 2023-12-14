@@ -50,14 +50,14 @@ export const tuitionFeeVi = {
             },
         },
         promotionProgramme: {
-            title: 'Chương trình khuyến mãi',
+            title: 'Chương trình khuyến mại',
             total: 'Tổng số tiền khuyến mãi: {total}',
-            apply: 'Chương trình khuyến mãi áp dụng',
+            apply: 'Chương trình khuyến mại áp dụng',
             priority: 'Độ ưu tiên',
             promotionValue: 'Số tiền khuyến mãi',
-            noApply: 'Không có chương trình khuyến mãi nào được áp dụng',
+            noApply: 'Không có chương trình khuyến mại nào được áp dụng',
             placeholder: {
-                name: 'Chọn chương trình khuyến mãi',
+                name: 'Chọn chương trình khuyến mại',
                 priority: 'Chọn độ ưu tiên',
             },
         },

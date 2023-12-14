@@ -25,6 +25,10 @@ const coursesVi = {
       label: 'Thời lượng (giờ)',
       placeholder: 'Nhập thời lượng (giờ)',
     },
+    tuition: {
+      label: 'Học phí',
+      placeholder: 'Nhập học phí',
+    },
   },
   update: {
     title: 'Chỉnh sửa khóa học',

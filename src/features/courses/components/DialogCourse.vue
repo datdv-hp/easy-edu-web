@@ -26,6 +26,7 @@ import {
   useCourseDialog,
   useCoursesStore,
 } from '@/features/courses/store';
+import { CurrencySuffix } from '@/features/setting/constant';
 import router from '@/plugins/vue-router';
 import { isEqual } from 'lodash';
 import { useForm } from 'vee-validate';
@@ -71,15 +72,20 @@ onMounted(async () => {
         name: course.name,
         description: course.description,
         times: course.times,
+        tuition: course.tuition,
         subjectIds: course.subjectIds,
+        
         courseType: course.courseFormIds,
+
       });
       oldForm.value = {
         name: course.name,
         description: course.description,
         times: course.times?.toString(),
+        tuition: course.tuition?.toString(),
         subjectIds: course.subjectIds,
         courseType: course.courseFormIds,
+
       };
     }
   }
@@ -209,7 +215,9 @@ const onCloseDialog = () => {
             multiple
           />
         </v-col>
-        <v-col cols="12">
+      </v-row>
+      <v-row>
+        <v-col cols="6">
           <InputNumber
             name="times"
             :label="$t('courses.create.time.label')"
@@ -218,6 +226,18 @@ const onCloseDialog = () => {
             clearable
           />
         </v-col>
+        <v-col cols="6">
+          <InputNumber
+            name="tuition"
+            :label="$t('courses.create.tuition.label')"
+            :placeholder="$t('courses.create.tuition.placeholder')"
+            isRequired
+            :suffix="CurrencySuffix.VND"
+            clearable
+          />
+        </v-col>
+      </v-row>
+      <v-row>
         <v-col cols="12">
           <InputTextarea
             name="description"
@@ -227,6 +247,8 @@ const onCloseDialog = () => {
             clearable
           />
         </v-col>
+      </v-row>
+      <v-row>
         <v-col cols="12" class="pt-0">
           <BaseAutoComplete
             name="subjectIds"

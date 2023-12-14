@@ -20,8 +20,8 @@ const appVi = {
         list: 'Danh sách học viên',
       },
       registration: {
-        name: 'Đăng ký tư vấn'
-      }
+        name: 'Đăng ký tư vấn',
+      },
     },
     trainingManagement: {
       groupName: 'Quản lý chương trình đào tạo',
@@ -55,6 +55,10 @@ const appVi = {
     schedule: {
       groupName: 'Vận hành giảng dạy',
     },
+    finance: {
+      groupName: 'Quản lý tài chính',
+      tuition: 'Học phí',
+    },
     setting: {
       groupName: 'Cài đặt',
       userRole: {
@@ -68,6 +72,12 @@ const appVi = {
       },
       timekeeping: {
         name: 'Chấm công',
+      },
+      promotionProgramme: {
+        name: 'Chương trình khuyến mại',
+      },
+      paymentMethod: {
+        name: 'Phương thức thanh toán',
       },
     },
     system: {

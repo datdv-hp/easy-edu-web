@@ -4,7 +4,6 @@ import {
   ICourseListItem,
   ICourseSubject,
   ICreateCourseForm,
-  IUpdateCourseForm,
 } from './interfaces';
 
 export const convertToCourseList = (
@@ -17,6 +16,7 @@ export const convertToCourseList = (
       name: item.name as string,
       code: item.code as string,
       times: item.times as number,
+      tuition: item.tuition as number,
       courseFormNames: courseForms?.map((courseForm) => courseForm.name as string) || [],
     };
   });
@@ -39,6 +39,7 @@ export const convertToCourse = (data: Record<string, unknown>): ICourse => {
     courseFormIds: get(data, 'courseFormIds', []) as string[],
     courseFormNames: get(data, 'courseFormNames', []) as string[],
     times: get(data, 'times', 0) as number,
+    tuition: data.tuition as number,
   };
 };
 
@@ -50,6 +51,7 @@ export const convertToCourseDetail = (params: Record<string, unknown>) => {
     times: params.times as number,
     courseFormIds: params.courseFormIds as string[],
     subjectIds: params.subjectIds as string[],
+    tuition: params.tuition as number,
   };
 };
 
@@ -63,27 +65,14 @@ export const convertToCourseMoreDetail = (data: Record<string, unknown>): ICours
   };
 };
 
-export const getCourseCreateFormData = (
-  params: Record<string, unknown>,
-): ICreateCourseForm => {
+export const getCourseFormData = (params: Record<string, unknown>): ICreateCourseForm => {
   return {
     name: params.name as string,
     description: params.description as string,
     times: params.times as number,
     subjectIds: params.subjectIds as string[],
     courseFormIds: params.courseType as string[],
-  };
-};
-
-export const getCourseUpdateFormData = (
-  params: Record<string, unknown>,
-): IUpdateCourseForm => {
-  return {
-    name: params.name as string,
-    description: params.description as string,
-    times: params.times as number,
-    subjectIds: params.subjectIds as string[],
-    courseFormIds: params.courseType as string[],
+    tuition: params.tuition as number,
   };
 };
 

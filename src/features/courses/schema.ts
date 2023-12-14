@@ -2,6 +2,7 @@ import { FORM_VALIDATION } from '@/common/constants';
 import yup from '@/plugins/yup';
 import { MAX_TIMES, MIN_TIMES } from './contants';
 
+const MIN_TUITION = 0;
 export const coursesFormSchema = yup.object({
   name: yup
     .string()
@@ -16,6 +17,11 @@ export const coursesFormSchema = yup.object({
     .max(MAX_TIMES, 'courses.validate.maxTimes')
     .required()
     .label('courses.time'),
+  tuition: yup
+    .number()
+    .min(MIN_TUITION, 'courses.validate.minTuition')
+    .required()
+    .label('courses.tuition'),
   description: yup
     .string()
     .optional()

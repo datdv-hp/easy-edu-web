@@ -6,5 +6,6 @@ export default {
     subjects: 'Học phần',
     evaluations: 'Cài đặt bảng đánh giá',
     time: 'Thời lượng',
+    tuition: 'Học phí',
   },
 };

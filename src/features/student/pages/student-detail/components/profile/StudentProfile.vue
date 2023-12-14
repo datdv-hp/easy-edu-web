@@ -73,7 +73,7 @@ const profile = computed(() => {
 const course = computed(() => {
   const _course = [
     {
-      icon: Icons.subjects as string,
+      icon: Icons.subjects,
       title: t('common.profile.course') as string,
       description: store.profile?.courses?.join(', '),
       isShow: !!store.profile?.courses?.length,

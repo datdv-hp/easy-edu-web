@@ -232,3 +232,8 @@ export interface IUserRole {
   registration?: IRegistrationPermission;
   tuition?: ITuitionPermission;
 }
+
+export type FilterResult = {
+  text: string;
+  field: string;
+};

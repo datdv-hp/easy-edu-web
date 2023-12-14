@@ -2,10 +2,12 @@ import classroomForm from '@/features/classroom/locale/vi/form.vi';
 import coursesForm from '@/features/courses/locale/vi/form.vi';
 import lessonForm from '@/features/lesson/locale/vi/form.vi';
 import managerForm from '@/features/manager/locale/vi/form.vi';
+import { paymentMethodFormEn } from '@/features/setting/locale/en/payment-method.en';
+import { promotionFormEn } from '@/features/setting/locale/en/promotion-programme.en';
 import { authorizationForm } from '@/features/setting/locale/vi/authorization.vi';
-import { syllabusForm } from '@/features/syllabus/locale/vi/syllabus.vi';
 import studentForm from '@/features/student/locale/vi/form.vi';
 import subjectForm from '@/features/subject/locale/vi/form.vi';
+import { syllabusForm } from '@/features/syllabus/locale/vi/syllabus.vi';
 import teacherDetail from '@/features/teacher/locale/vi/form.vi';
 import { tuitionFeeForm } from '@/features/tuition-fee/locale';
 
@@ -89,4 +91,6 @@ export const yupFieldsEn = {
   authorizationForm,
   syllabusForm,
   tuitionFeeForm: tuitionFeeForm.en,
+  promotion: promotionFormEn,
+  paymentMethodForm: paymentMethodFormEn,
 };

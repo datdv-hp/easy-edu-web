@@ -23,8 +23,15 @@ const commonVi = {
     setting: 'Cài đặt',
     revert: 'Khôi phục',
     download: 'Tải xuống',
+    apply: 'Áp dụng',
+    pay: 'Thanh toán',
   },
   search: 'Tìm kiếm',
+  filter: {
+    title: 'Bộ lọc',
+    deleteAll: 'Xóa tất cả',
+    delete: 'Xóa tiêu chí',
+  },
   deleteConfirm: 'Xác nhận xóa',
   form: {
     name: {

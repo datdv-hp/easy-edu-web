@@ -21,6 +21,7 @@ interface Props {
   isFloatNumber?: boolean;
   decimal?: number;
   mask?: MaskOptions;
+  suffix?: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -96,6 +97,7 @@ const onPaste = ($event: Event) => {
       @keydown.enter="onEnter"
       @keypress="(evt: KeyboardEvent) => filter(evt)"
       @paste="onPaste"
+      :suffix="suffix"
       ref="inputRef"
     ></v-text-field>
     <input-status :is-show="!!errorMessage" :message="errorMessage || ''" type="error" />

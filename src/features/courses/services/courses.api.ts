@@ -1,17 +1,17 @@
 import axiosService, { ApiService } from '@/plugins/axios';
 import { IBodyResponse } from '@/common/interfaces';
-import { getCourseCreateFormData, getCourseUpdateFormData } from '../helpers';
+import { getCourseFormData } from '../helpers';
 
 class CourseApiService extends ApiService {
   update(
     id: number | string,
     params: Record<string, unknown>,
   ): Promise<IBodyResponse<any>> {
-    return this._update(id, getCourseUpdateFormData(params));
+    return this._update(id, getCourseFormData(params));
   }
 
   create(params: Record<string, unknown>): Promise<IBodyResponse<any>> {
-    return this._create(getCourseCreateFormData(params));
+    return this._create(getCourseFormData(params));
   }
 
   detail(id: number | string): Promise<IBodyResponse<any>> {

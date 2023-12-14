@@ -6,6 +6,7 @@ export type ICourseListItem = {
   code: string;
   times: number;
   courseFormNames: string[];
+  tuition: number;
 };
 
 export interface ICourse {
@@ -14,6 +15,7 @@ export interface ICourse {
   name: string;
   code: string;
   times?: number;
+  tuition: number;
   description?: string;
   subjects?: ICourseSubject[];
   courseFormIds: string[];
@@ -36,6 +38,7 @@ export interface ICreateCourseForm {
   times: number;
   subjectIds?: string[];
   courseFormIds: string[];
+  tuition: number;
 }
 
 export type IUpdateCourseForm = Partial<ICreateCourseForm>;
