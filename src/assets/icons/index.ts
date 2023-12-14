@@ -18,6 +18,7 @@ import edit from './lms/edit-icon.svg';
 import deleteIcon from './lms/delete.svg';
 import document from './lms/document.svg';
 import identity from './lms/identity.svg';
+import dollarCircle from './lms/dollar-circle.svg';
 
 import sortUpActive from './lms/caret-up-purple.svg';
 import sortUp from './lms/caret-up.svg';
@@ -53,6 +54,7 @@ import lockPurple from './register/ic-lock-purple.svg';
 import deleteRed from './syllabus/delete-red.svg';
 
 export default {
+  dollarCircle,
   identity,
   email,
   clock,

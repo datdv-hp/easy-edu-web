@@ -45,6 +45,14 @@ export default {
         label: 'Chọn giáo trình',
         placeholder: 'Chọn giáo trình',
       },
+      paymentStartAt: {
+        label: 'Ngày bắt đầu thu học phí',
+        placeholder: 'Ngày bắt đầu thu học phí',
+      },
+      paymentEndAt: {
+        label: 'Ngày kết thúc thu học phí',
+        placeholder: 'Ngày kết thúc thu học phí',
+      },
     },
   },
   status: {

@@ -12,12 +12,18 @@ const studentDialog = useStudentDialog();
 onMounted(() => {
   store.getList();
 });
+function handleCreateNewStudentSuccess() {
+  store.getList();
+}
 </script>
 <template>
   <HeaderBar :title="$t('registration.list')"> </HeaderBar>
   <SearchBar />
   <RegistrationList />
-  <DialogStudent v-if="studentDialog.isOpen" />
+  <DialogStudent
+    v-if="studentDialog.isOpen"
+    @create:success="handleCreateNewStudentSuccess"
+  />
 </template>
 
 <style lang="scss" scoped></style>

@@ -1,12 +1,11 @@
 <script lang="ts" setup>
-import { useTimekeepingStore } from '@/features/teacher/stores';
-import { BaseButton, DatePicker, SearchInput } from '@/components';
-import { onMounted } from 'vue';
-import { useField, useForm } from 'vee-validate';
-import { onUnmounted } from 'vue';
-import { useUserStore } from '@/features/auth/stores';
 import { ProfileType } from '@/common/constants';
+import { DatePicker, SearchForm } from '@/components';
+import { useUserStore } from '@/features/auth/stores';
+import { useTimekeepingStore } from '@/features/teacher/stores';
 import dayjs from 'dayjs';
+import { useField, useForm } from 'vee-validate';
+import { onMounted, onUnmounted } from 'vue';
 
 const store = useTimekeepingStore();
 const user = useUserStore();
@@ -37,22 +36,12 @@ const setTimekeepingMonth = async ($event) => {
 
 <template>
   <div class="ma-4 searchbar-container">
-    <div class="d-flex">
-      <SearchInput
-        v-if="user.profile?.type !== ProfileType.TEACHER"
-        class="mr-3"
-        v-model="store.teacherListQuery.keyword"
-        style="max-height: 100%"
-        @enter="search"
-      />
-      <BaseButton
-        v-if="user.profile?.type !== ProfileType.TEACHER"
-        :label="$t('teacher.timekeeping.search.searchButton')"
-        size="medium"
-        @click="search"
-      />
-    </div>
-    <div style="width: 255px">
+    <SearchForm
+      class="ma-n4"
+      v-if="user.profile?.type !== ProfileType.TEACHER"
+      @submit="search"
+    />
+    <div class="select-month">
       <DatePicker
         name="month"
         :placeholder="$t('teacher.timekeeping.search.month')"
@@ -69,8 +58,11 @@ const setTimekeepingMonth = async ($event) => {
 .searchbar-container {
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
-  height: 50px;
-  align-items: stretch;
+
+  .select-month {
+    width: 250px;
+    background-color: $color-white;
+    border-radius: 4px;
+  }
 }
 </style>

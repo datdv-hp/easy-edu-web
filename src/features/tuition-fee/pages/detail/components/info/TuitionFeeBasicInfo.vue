@@ -5,7 +5,7 @@ import { BaseButton, DatePicker, ProfileItem } from '@/components';
 import { formatCurrencyVND } from '@/features/tuition-fee/helpers';
 import { useTuitionFeeStore } from '@/features/tuition-fee/stores';
 import dayjs from '@/plugins/dayjs';
-import { computed } from 'vue';
+import { computed, onBeforeUnmount } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 type Props = {
@@ -86,6 +86,9 @@ function handleClickSave() {
 function handleClickCancel() {
     emit('click:cancel');
 }
+onBeforeUnmount(() => {
+    store.setIsUpdating(false);
+});
 </script>
 <template>
     <div class="d-flex align-center justify-space-between mt-0 mb-4">

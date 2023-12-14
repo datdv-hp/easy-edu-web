@@ -7,7 +7,7 @@ import {
   DEFAULT_LIMIT_FOR_PAGINATION,
   OrderDirection,
 } from './constants';
-import { type IOption, type IOrderDirection } from './interfaces';
+import { FilterResult, IFilterType, type IOption, type IOrderDirection } from './interfaces';
 
 export function isValidJSON(str: string) {
   try {
@@ -178,3 +178,51 @@ export const scrollToIdElement = (id: string) => {
     element.scrollIntoView({ behavior: 'smooth' });
   }
 };
+
+export function getFilterResult(formValue: Record<string, any>, filters: IFilterType[]) {
+  const result: FilterResult[] = [];
+  filters.map((filter) => {
+      const filterValue = formValue[filter.name];
+      if (!filterValue || (Array.isArray(filterValue) && !filterValue.length)) return;
+      const _filter = {
+          field: filter.name,
+          text: '',
+      };
+      if (filter.options && Array.isArray(filterValue)) {
+          const textArray = filterValue.map((item) => {
+              const option = filter.options?.find((option) => option.value === item);
+              return (option?.title as string) || (item as string);
+          });
+          _filter.text = textArray.join(', ');
+          result.push(_filter);
+          return;
+      }
+      if (filter.options) {
+          const option = filter.options.find((option) => option.value === filterValue);
+          _filter.text = option?.title || filterValue;
+          result.push(_filter);
+          return;
+      }
+
+      if (filter.isDate) {
+          if (Array.isArray(filterValue)) {
+              const fromDate = dayjs(filterValue[0]).format(
+                  DATE_TIME_FORMAT.YYYY_MM_DD_DASH,
+              );
+              const toDate = dayjs(filterValue[1]).format(
+                  DATE_TIME_FORMAT.YYYY_MM_DD_DASH,
+              );
+              _filter.text = `${fromDate} - ${toDate}`;
+          } else {
+              _filter.text = dayjs(filterValue).format(
+                  DATE_TIME_FORMAT.YYYY_MM_DD_HYPHEN,
+              );
+          }
+          result.push(_filter);
+          return;
+      }
+      _filter.text = Array.isArray(filterValue) ? filterValue.join(', ') : filterValue;
+      result.push(_filter);
+  });
+  return result;
+}

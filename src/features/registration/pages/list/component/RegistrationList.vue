@@ -141,9 +141,17 @@ async function reset() {
           <td v-if="role.registration?.createStudent">
             <div class="d-flex align-center justify-center gap-2">
               <ActionIcon
+                :disabled="item.status !== RegistrationStatus.PENDING"
                 icon="$user.user-circle-add"
-                :tooltip-text="$t('registration.action.addStudent')"
-                @click="studentDialog.open(undefined, item)"
+                :tooltip-text="
+                  item.status === RegistrationStatus.PENDING
+                    ? $t('registration.action.addStudent')
+                    : undefined
+                "
+                @click="
+                  item.status === RegistrationStatus.PENDING &&
+                    studentDialog.open(undefined, item)
+                "
               />
               <ActionIcon
                 icon="$custom.refresh"

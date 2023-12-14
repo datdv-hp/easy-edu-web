@@ -5,6 +5,7 @@ import { useAuthStore, useUserStore } from '@/features/auth/stores';
 import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 import UserChangePassword from './UserChangePassword.vue';
+import { PageName } from '@/common/constants';
 
 withDefaults(
   defineProps<{
@@ -27,12 +28,12 @@ const avatarUrl = computed(() => {
 
 const menu = computed(() => {
   const list = [
-    // {
-    //   title: t('app.sidebar.menu.profile'),
-    //   routeName: PageName.PROFILE_PAGE,
-    //   icon: '$user.profile',
-    //   isShow: true,
-    // },
+    {
+      title: t('app.sidebar.menu.profile'),
+      routeName: PageName.PROFILE_PAGE,
+      icon: '$user.profile',
+      isShow: true,
+    },
     {
       title: t('app.sidebar.menu.resetPassword'),
       icon: '$user.key',
@@ -43,7 +44,7 @@ const menu = computed(() => {
     },
     {
       title: t('app.sidebar.menu.logout'),
-      click: authStore.logoutAction,
+      click: async () => await authStore.logoutAction(),
       icon: '$user.logout',
       isShow: true,
     },
@@ -72,9 +73,11 @@ const menu = computed(() => {
           :key="index"
           density="compact"
           color="primary"
+          :value="menuItem.title"
           :title="menuItem.title"
           :prepend-icon="menuItem.icon"
-          @click.stop="menuItem.click"
+          :to="menuItem.routeName ? { name: menuItem.routeName } : undefined"
+          @click.stop="menuItem.click ? menuItem.click() : undefined"
         />
       </v-list>
     </v-menu>

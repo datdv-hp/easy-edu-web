@@ -7,12 +7,19 @@ import TuitionFeeList from './components/TuitionFeeList.vue';
 
 const store = useTuitionFeeStore();
 onBeforeMount(async () => {
-    store.getList();
+  store.getList();
 });
 </script>
 <template>
-    <HeaderBar :title="$t('tuitionFee.list')" />
+  <HeaderBar :title="$t('tuitionFee.list')" />
+  <div class="wrapper d-flex flex-column">
     <SearchBar />
-    <TuitionFeeList />
+    <TuitionFeeList class="flex-1" />
+  </div>
 </template>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.wrapper {
+  height: 100%;
+  max-height: calc(100vh - $height-header-bar); //60px: the height of header bar
+}
+</style>

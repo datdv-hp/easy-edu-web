@@ -74,6 +74,10 @@ onMounted(async () => {
         color: data.color,
         teacherIds: data.teacherIds,
         syllabusIds: data?.syllabusIds,
+        paymentDate: {
+          startDate: data?.paymentStartDate,
+          endDate: data?.paymentEndDate,
+        },
       };
       setValues(formValues);
       oldForm.value = cloneDeep(formValue);
@@ -259,7 +263,7 @@ function submit() {
             :label="$t('classroom.form.fields.startDate.label')"
             :placeholder="$t('classroom.form.fields.startDate.placeholder')"
             value-type="string"
-            :min="new Date()"
+            :min="dayjs().toDate()"
             :max="
               formValue?.endDate
                 ? dayjs(formValue?.endDate).subtract(1, 'day').toDate()
@@ -278,7 +282,39 @@ function submit() {
             :min="
               formValue?.startDate
                 ? dayjs(formValue?.startDate).add(1, 'day').toDate()
-                : new Date()
+                : dayjs().toDate()
+            "
+          />
+        </v-col>
+      </v-row>
+    </div>
+    <div class="list-group">
+      <v-row>
+        <v-col cols="6">
+          <DatePicker
+            class="list-item"
+            name="paymentDate.startDate"
+            is-required
+            :label="$t('classroom.form.fields.paymentStartAt.label')"
+            :placeholder="$t('classroom.form.fields.paymentStartAt.placeholder')"
+            :max-date="
+              formValue?.paymentEndDate
+                ? dayjs(formValue?.paymentEndDate).subtract(1, 'day').toDate()
+                : undefined
+            "
+          />
+        </v-col>
+        <v-col cols="6">
+          <DatePicker
+            class="list-item"
+            name="paymentDate.endDate"
+            is-required
+            :label="$t('classroom.form.fields.paymentEndAt.label')"
+            :placeholder="$t('classroom.form.fields.paymentEndAt.placeholder')"
+            :min-max="
+              formValue?.paymentStartDate
+                ? dayjs(formValue?.paymentStartDate).add(1, 'day').toDate()
+                : undefined
             "
           />
         </v-col>

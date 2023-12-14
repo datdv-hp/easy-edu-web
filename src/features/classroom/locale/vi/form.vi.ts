@@ -6,8 +6,7 @@ export default {
     participants: 'Học viên',
     course: 'Khóa học',
     teachers: 'Giảng viên',
+    paymentStartDate: 'Ngày bắt đầu thu học phí',
+    paymentEndDate: 'Ngày kết thúc thu học phí',
   },
-  finalScore: 'Điểm cuối kỳ',
-  testScore: 'Điểm kiểm tra',
-  projectScore: 'Điểm đồ án',
 };

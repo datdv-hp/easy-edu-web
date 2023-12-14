@@ -3,7 +3,13 @@ import { IUserRole, type IBodyResponse } from '@/common/interfaces';
 import localStorageAuthService from '@/common/storages/authStorage';
 import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
-import { convertToActiveAccountBody, convertToUser } from '../helpers';
+import {
+  convertToActiveAccountBody,
+  convertToUser,
+  getUpdateManagerProfileFormData,
+  getUpdateStudentProfileFormData,
+  getUpdateTeacherProfileFormData,
+} from '../helpers';
 import type {
   IMaster,
   IUserChangePassword,
@@ -42,31 +48,21 @@ export const useUserStore = defineStore('userStore', () => {
       return;
     }
     isFetching.value = true;
-    let response: IBodyResponse<IUserProfile>;
+    let data = {};
     switch (profile.value?.type) {
       case ProfileType.STUDENT:
-        response = await authApi._updateStudentProfile({
-          ...values,
-          type: profile.value?.type,
-        });
+        data = getUpdateStudentProfileFormData(values);
         break;
-
       case ProfileType.TEACHER:
-        response = await authApi._updateTeacherProfile({
-          ...values,
-          type: profile.value?.type,
-        });
+        data = getUpdateTeacherProfileFormData(values);
         break;
-
       default:
-        response = await authApi._updateManagerProfile({
-          ...values,
-          type: profile.value?.type,
-        });
+        data = getUpdateManagerProfileFormData(values);
         break;
     }
+    const res = await authApi._updateProfile({ ...data, type: profile.value.type });
     isFetching.value = false;
-    return response;
+    return res;
   };
 
   const activeAccount = async (data: Record<string, string | boolean>) => {

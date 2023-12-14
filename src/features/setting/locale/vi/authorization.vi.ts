@@ -36,6 +36,9 @@ export default {
     evaluationCriteriaSetting: 'Cài đặt tiêu chí',
     settingTimekeeping: 'Cài đặt ngày chốt công',
     registration: 'Đăng ký tư vấn',
+    promotionSetting: 'Cài đặt chương trình khuyến mại',
+    paymentMethodSetting: 'Cài đặt phương thức thanh toán',
+    tuition: 'Học phí',
   },
   permissions: {
     user: {
@@ -172,6 +175,23 @@ export default {
       createStudent: 'Thêm mới học viên',
       delete: 'Xóa',
     },
+    promotionSetting: {
+      view: 'Xem',
+      update: 'Chỉnh sửa',
+      delete: 'Xóa',
+      create: 'Tạo mới',
+    },
+    paymentMethodSetting: {
+      view: 'Xem',
+      update: 'Chỉnh sửa',
+      delete: 'Xóa',
+      create: 'Tạo mới',
+    },
+    tuition: {
+      view: 'Xem tất cả học phí',
+      viewPersonal: 'Xem học phí cá nhân',
+      update: 'Chỉnh sửa',
+    },
     all: 'Tất cả',
   },
   info: {
@@ -180,6 +200,7 @@ export default {
     roleType: 'Loại người dùng: ',
     description: 'Mô tả',
   },
+
   form: {
     name: {
       label: 'Tên vai trò',

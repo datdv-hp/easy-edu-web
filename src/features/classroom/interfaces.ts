@@ -26,6 +26,8 @@ export interface IClassroom {
   countInProgressLesson?: number;
   teachers?: string[];
   syllabusIds?: string[];
+  paymentStartDate?: string;
+  paymentEndDate?: string;
 }
 export interface ICreateClassRoomBody {
   name: string;
@@ -36,6 +38,10 @@ export interface ICreateClassRoomBody {
   color: string;
   teacherIds?: string[]; // mongo_id[]
   syllabusIds?: string[];
+  paymentDate: {
+    startDate: string;
+    endDate: string;
+  };
 }
 
 export type IUpdateClassroomBody = Partial<ICreateClassRoomBody>;

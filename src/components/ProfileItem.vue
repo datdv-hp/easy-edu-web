@@ -5,6 +5,7 @@ import { CircleIcon } from '.';
 
 defineProps<{
   icon?: string;
+  iconString?: string;
   title: string;
   description?: string | number | string[];
   link?: string;
@@ -27,6 +28,9 @@ const handleCopyRoom = async (text: string) => {
     <div class="info-title d-flex align-center mb-2">
       <div class="info-icon" v-if="icon">
         <img class="mr-3" :src="icon" alt="" />
+      </div>
+      <div class="info-string" v-if="iconString">
+        <v-icon class="mr-3" :icon="iconString"></v-icon>
       </div>
       {{ title }}
     </div>

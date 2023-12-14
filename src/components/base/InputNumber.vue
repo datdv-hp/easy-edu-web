@@ -3,6 +3,7 @@ import { useField } from 'vee-validate';
 import InputStatus from './InputStatus.vue';
 import { FORM_VALIDATION } from '@/common/constants';
 import { vMaska, MaskOptions } from 'maska';
+import { isNumber } from 'lodash';
 
 interface Props {
   name: string;
@@ -22,6 +23,7 @@ interface Props {
   decimal?: number;
   mask?: MaskOptions;
   suffix?: string;
+  max?: number;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -34,7 +36,7 @@ const props = withDefaults(defineProps<Props>(), {
   decimal: 2,
 });
 
-const { value: inputValue, errorMessage } = useField(props.name, undefined, {
+const { value: inputValue, errorMessage, setValue } = useField(props.name, undefined, {
   validateOnValueUpdate: props.validateOnUpdate,
 });
 
@@ -43,13 +45,25 @@ const filter = (evt: KeyboardEvent) => {
     ? FORM_VALIDATION.floatPattern
     : FORM_VALIDATION.intPattern;
   if (!evt.target) return;
-  const expect = (evt.target as HTMLInputElement).value.toString() + evt.key.toString();
-
+  const target = evt.target as HTMLInputElement;
+  const value = target.value.toString();
+  const expect =
+    value.slice(0, target.selectionStart as number) +
+    evt.key.toString() +
+    value.slice(target.selectionEnd as number);
   if (!(matchRegex as RegExp).test(expect)) {
     evt.preventDefault();
-  } else {
-    return true;
+    return false;
   }
+  if (isNumber(props.max)) {
+    const value = Number(expect);
+    if (value > props.max) {
+      emit('change', props.max);
+      setValue(props.max.toString());
+      evt.preventDefault();
+    }
+  }
+  return true;
 };
 
 const emit = defineEmits(['change', 'keydown.enter']);

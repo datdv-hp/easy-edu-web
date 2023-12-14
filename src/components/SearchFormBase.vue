@@ -3,6 +3,7 @@ import { ref } from 'vue';
 import SearchInput from './SearchInput.vue';
 import { BaseButton } from '.';
 import { FilterResult } from '@/common/interfaces';
+import FilterResults from './FilterResults.vue';
 
 interface Props {
   hideSearch?: boolean;
@@ -17,7 +18,7 @@ withDefaults(defineProps<Props>(), {
   hideSearchBtn: false,
   isUseFilter: false,
 });
-const emit = defineEmits(['submit', 'click:outside', 'deleteFilter']);
+const emit = defineEmits(['submit', 'click:outside', 'deleteFilter', 'delete:filter-result']);
 const isOpen = ref(false);
 const onSubmit = () => {
   emit('submit');
@@ -28,60 +29,69 @@ function onClickOutside() {
 </script>
 
 <template>
-  <div class="d-flex pa-4 align-center w-100">
-    <SearchInput v-if="!hideSearch" @enter="onSubmit" />
-    <slot></slot>
+  <div>
+    <div class="d-flex pa-4 align-center w-100">
+      <SearchInput v-if="!hideSearch" @enter="onSubmit" />
+      <slot></slot>
 
-    <v-btn
-      v-if="!hideSearchBtn"
-      class="text-none ms-3"
-      variant="flat"
-      color="primary"
-      height="40"
-      :text="$t('common.search')"
-      @click="onSubmit"
-    />
-    <v-spacer />
-    <v-menu
-      v-if="isUseFilter"
-      v-model="isOpen"
-      :offset="10"
-      :close-on-back="true"
-      :close-on-content-click="false"
-      location="bottom right"
-      @click:outside="onClickOutside"
-      :eager="true"
-    >
-      <template v-slot:activator="{ props }">
-        <v-btn
-          v-bind="props"
-          variant="outlined"
-          class="filter-btn"
-          :height="48"
-          :icon="isApplyFilter ? '$custom.filter-tick' : '$custom.filter'"
-        />
-      </template>
-      <v-card>
-        <template v-slot:append>
-          <div class="delete-all" @click="emit('deleteFilter')">
-            {{ $t('common.filter.deleteAll') }}
-          </div>
+      <v-btn
+        v-if="!hideSearchBtn"
+        class="text-none ms-3"
+        variant="flat"
+        color="primary"
+        height="40"
+        :text="$t('common.search')"
+        @click="onSubmit"
+      />
+      <v-spacer />
+      <v-menu
+        v-if="isUseFilter"
+        v-model="isOpen"
+        :offset="10"
+        :close-on-back="true"
+        :close-on-content-click="false"
+        location="bottom right"
+        @click:outside="onClickOutside"
+        :eager="true"
+      >
+        <template v-slot:activator="{ props }">
+          <v-btn
+            v-bind="props"
+            variant="outlined"
+            class="filter-btn"
+            :height="48"
+            :icon="isApplyFilter ? '$custom.filter-tick' : '$custom.filter'"
+          />
         </template>
-        <template v-slot:title>
-          <slot name="title">
-            <span class="menu-title">{{ title || $t('common.filter.title') }}</span>
-          </slot>
-        </template>
-        <v-card-text class="pa-6">
-          <slot name="filters"></slot>
-        </v-card-text>
-        <v-card-actions class="justify-end pa-3 actions">
-          <BaseButton size="extra-small" @click.stop="onSubmit">
-            {{ $t('common.button.apply') }}
-          </BaseButton>
-        </v-card-actions>
-      </v-card>
-    </v-menu>
+        <v-card>
+          <template v-slot:append>
+            <div class="delete-all" @click="emit('deleteFilter')">
+              {{ $t('common.filter.deleteAll') }}
+            </div>
+          </template>
+          <template v-slot:title>
+            <slot name="title">
+              <span class="menu-title">{{ title || $t('common.filter.title') }}</span>
+            </slot>
+          </template>
+          <v-card-text class="pa-6">
+            <slot name="filters"></slot>
+          </v-card-text>
+          <v-card-actions class="justify-end pa-3 actions">
+            <BaseButton size="extra-small" @click.stop="onSubmit">
+              {{ $t('common.button.apply') }}
+            </BaseButton>
+          </v-card-actions>
+        </v-card>
+      </v-menu>
+    </div>
+    <div class="px-4 pb-4 mt-n2" v-if="filterResults?.length">
+      <FilterResults
+        :filters="filterResults"
+        @remove="(field: string) => emit('delete:filter-result', field)"
+        @remove-all="emit('delete:filter-result')"
+      />
+    </div>
   </div>
 </template>
 

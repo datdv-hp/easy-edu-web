@@ -66,6 +66,10 @@ class CommonAPIService extends ApiService {
     });
   }
 
+  _getManagerDropdown(): Promise<IBodyResponse<Record<string, unknown>[]>> {
+    return this.client.get('/dropdown/manager');
+  }
+
   _getCourseTypeDropdown() {
     return this.client.get(`/dropdown/course-form`) as Promise<
       IBodyResponse<Record<string, string>[]>

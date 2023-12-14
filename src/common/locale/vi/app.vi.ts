@@ -81,6 +81,7 @@ const appVi = {
       },
     },
     system: {
+      groupName: 'Hệ thống',
       notification: {
         name: 'Thông báo',
       },

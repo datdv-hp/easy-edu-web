@@ -70,7 +70,7 @@ const events = computed(() => {
       category: EventCategory.TIME,
       start: `${item.date} ${item.startTime}`,
       end: `${item.date} ${item.endTime}`,
-      location: item.room,
+      location: item.isUseGoogleMeet ? item.meetUrl : item.room,
       color: '#ffffff',
       backgroundColor: color,
       borderColor: color,
@@ -125,7 +125,9 @@ const template = {
         <div class="schedule-event" style="height: 100%">
             <div class="schedule-event--title text-truncate ${monthTitleClass}">${title}</div>
             <div class="schedule-event--time text-truncate ${dNoneClass}">
-                <span>${start}-${end}, </span>
+                <span>${start}-${end}</span>
+            </div>
+            <div class="schedule-event--time text-truncate ${dNoneClass}">
                 <span>${event.location}</span>
             </div>
         </div>`;
@@ -359,7 +361,7 @@ defineExpose({
 
 <style lang="scss" scoped>
 .calendar {
-  height: calc(100vh - 80px - 70px);
+  height: calc(100vh - $offset-table-height-without-tab);
   &.readonly {
     :deep(.toastui-calendar-grid-selection) {
       display: none;

@@ -6,6 +6,7 @@ import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 import ProfileCardItem from '@/components/ProfileCardItem.vue';
 import { useRole } from '@/common/stores/role.store';
+import { formatCurrencyVND } from '@/features/tuition-fee/helpers';
 
 const store = useCourseDetail();
 const role = useRole();
@@ -19,23 +20,40 @@ const _profile = computed(() => {
       title: t('courses.detail.info.id'),
       description: store.detail?.code || '',
       isShow: true,
+      cols: 8,
     },
     {
       icon: Icons.screen,
       title: t('courses.detail.info.typeCourse'),
       description: store.detail?.courseFormNames.join(', ') || '',
       isShow: true,
+      cols: 4,
     },
     {
       icon: Icons.description,
       title: t('courses.detail.info.name'),
       description: store.detail?.name || '',
       isShow: true,
+      cols: 8,
     },
     {
       icon: Icons.description,
       title: t('courses.detail.info.time'),
       description: store.detail?.times || '',
+      isShow: true,
+      cols: 4,
+    },
+  ];
+  return profile.filter((item) => item.isShow);
+});
+const extraInfo = computed(() => {
+  if (!store?.detail) return [];
+
+  return [
+    {
+      icon: Icons.dollarCircle,
+      title: t('courses.detail.info.tuition'),
+      description: formatCurrencyVND(store.detail?.tuition || 0),
       isShow: true,
     },
     {
@@ -44,6 +62,12 @@ const _profile = computed(() => {
       description: store.detail?.description || '',
       isShow: true,
     },
+  ].filter((item) => item.isShow);
+});
+const profileCards = computed(() => {
+  if (!store?.detail) return [];
+
+  return [
     {
       icon: Icons.userWhite,
       title: t('courses.detail.info.numberOfStudents'),
@@ -72,8 +96,7 @@ const _profile = computed(() => {
       isShow: true,
       color: 'error',
     },
-  ];
-  return profile.filter((item) => item.isShow);
+  ].filter((item) => item.isShow);
 });
 </script>
 
@@ -84,9 +107,9 @@ const _profile = computed(() => {
         {{ $t('courses.detail.info.title') }}
       </div>
       <v-row>
-        <v-col cols="8">
+        <v-col cols="6">
           <v-row>
-            <v-col cols="6" v-for="(item, index) in _profile.slice(0, 4)" :key="index">
+            <v-col :cols="item.cols" v-for="(item, index) in _profile" :key="index">
               <ProfileItem
                 :icon="item.icon"
                 :title="item.title"
@@ -95,9 +118,9 @@ const _profile = computed(() => {
             </v-col>
           </v-row>
         </v-col>
-        <v-col cols="4">
+        <v-col cols="6">
           <v-row>
-            <v-col cols="12" v-for="(item, index) in _profile.slice(4, 5)" :key="index">
+            <v-col cols="12" v-for="(item, index) in extraInfo" :key="index">
               <ProfileItem
                 :icon="item.icon"
                 :title="item.title"
@@ -108,7 +131,7 @@ const _profile = computed(() => {
         </v-col>
       </v-row>
       <v-row v-if="role.course?.detailStatistics">
-        <v-col cols="6" lg="3" v-for="(item, index) in _profile.slice(5)" :key="index">
+        <v-col cols="6" lg="3" v-for="(item, index) in profileCards" :key="index">
           <ProfileCardItem
             :icon="item.icon"
             :title="item.title"

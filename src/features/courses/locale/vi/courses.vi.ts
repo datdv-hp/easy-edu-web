@@ -53,6 +53,7 @@ const coursesVi = {
       numberOfOngoingClassrooms: 'Số lượng lớp học đang hoạt động',
       numberOfCompletedClassrooms: 'Số lượng lớp học đã kết thúc',
       description: 'Mô tả',
+      tuition: 'Học phí niêm yết',
     },
     evaluation: {
       tabTitle: 'Bảng đánh giá',
@@ -149,6 +150,7 @@ const coursesVi = {
       name: 'Tên khóa học',
       times: 'Thời lượng (giờ)',
       state: 'Hình thức',
+      tuition: 'Học phí niêm yết',
     },
   },
   coursesType: {

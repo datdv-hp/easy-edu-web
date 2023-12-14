@@ -1,0 +1,13 @@
+@import '../../../../assets/styles/variables.scss';
+
+.v-field--variant-outlined:not(.v-field--focused, .v-field--error) {
+  .v-field__outline {
+    --v-field-border-opacity: 1;
+    .v-field__outline__start,
+    .v-field__outline__end,
+    .v-field__outline__notch::after,
+    .v-field__outline__notch::before {
+      border-color: $color-neutral-6;
+    }
+  }
+}

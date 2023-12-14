@@ -26,6 +26,7 @@ export const useStudentStore = defineStore('student', () => {
   const profile = ref<IStudentProfileData>();
   const subjectOptions = ref<IOption[][]>([[]]);
   const subjects = ref<IOption[]>([]);
+  const _presenterOptions = ref<IOption[]>([]);
 
   const tab = ref(null);
   const selectedIds = ref<Record<string, boolean>>({});
@@ -92,6 +93,13 @@ export const useStudentStore = defineStore('student', () => {
     return res;
   }
 
+  async function getPresenterDropdown() {
+    const res = await commonApiService._getManagerDropdown();
+    if (res.success) {
+      _presenterOptions.value = convertToOptions(res.data);
+    }
+  }
+
   const setQuery = (_query: IStudentListQuery) => {
     const query = { ...studentListQuery, ..._query };
     Object.assign(studentListQuery, query);
@@ -146,6 +154,7 @@ export const useStudentStore = defineStore('student', () => {
   const isAllSelected = computed(() => {
     return list.value.length && selectedIdsList.value.length === list.value.length;
   });
+  const presenterOptions = computed(() => _presenterOptions.value);
 
   function selectAll() {
     list.value.forEach((student) => {
@@ -240,5 +249,7 @@ export const useStudentStore = defineStore('student', () => {
     setQuery,
     getRoleDropdown,
     roleOptions,
+    presenterOptions,
+    getPresenterDropdown,
   };
 });

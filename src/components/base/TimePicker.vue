@@ -271,51 +271,13 @@ const onModelValueUpdate = (modelData: ITime | undefined) => {
   }
 }
 
-:deep(.dp__inc_dec_button[aria-label='Increment hours']) {
-  background-image: url('@/assets/icons/plus.svg');
-  background-repeat: no-repeat;
-  background-position: center center;
-  .dp__icon {
-    display: none;
-  }
-  &:hover {
-    background-color: #f2f1ff;
-  }
-}
-
-:deep(.dp__inc_dec_button[aria-label='Increment minutes']) {
-  background-image: url('@/assets/icons/plus.svg');
-  background-repeat: no-repeat;
-  background-position: center center;
-  .dp__icon {
-    display: none;
-  }
-  &:hover {
-    background-color: #f2f1ff;
-  }
-}
-
-:deep(.dp__inc_dec_button[aria-label='Decrement hours']) {
-  background-image: url('@/assets/icons/minus.svg');
-  background-repeat: no-repeat;
-  background-position: center center;
-  .dp__icon {
-    display: none;
-  }
-  &:hover {
-    background-color: #f2f1ff;
-  }
-}
-
+:deep(.dp__inc_dec_button[aria-label='Increment hours']),
+:deep(.dp__inc_dec_button[aria-label='Increment minutes']),
+:deep(.dp__inc_dec_button[aria-label='Decrement hours']),
 :deep(.dp__inc_dec_button[aria-label='Decrement minutes']) {
-  background-image: url('@/assets/icons/minus.svg');
-  background-repeat: no-repeat;
-  background-position: center center;
-  .dp__icon {
-    display: none;
-  }
   &:hover {
-    background-color: #f2f1ff;
+    background: $color-primary-4;
+    color: $color-primary-1;
   }
 }
 
@@ -339,9 +301,9 @@ const onModelValueUpdate = (modelData: ITime | undefined) => {
   }
 
   .dp__action_button {
+    justify-content: center;
     width: 142px;
-    height: 40px;
-    margin-left: 0;
+    height: 32px;
     border-radius: 6px;
   }
 

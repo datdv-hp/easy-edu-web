@@ -20,6 +20,7 @@ export interface IStudentProfileData extends IStudent {
 export type ICourseDetail = {
   courseId: string;
   subjectIds: string;
+  presenterId?: string;
 };
 export interface IStudentDetail {
   degree?: StudentDegree;

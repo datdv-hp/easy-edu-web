@@ -108,6 +108,17 @@ const isShowDelete = computed(() => courses.value.length > 1);
         />
       </v-col>
     </v-row>
+    <v-row>
+      <v-col cols="12">
+        <BaseAutoComplete
+          :name="`studentDetail.courses[${index}].presenterId`"
+          :label="$t('student.form.presenter.label')"
+          :placeholder="$t('student.form.presenter.placeholder')"
+          :items="store.presenterOptions"
+          :is-disabled="!courses[index].courseId"
+        />
+      </v-col>
+    </v-row>
   </div>
   <v-row>
     <v-col cols="12" class="d-flex justify-center mt-3">

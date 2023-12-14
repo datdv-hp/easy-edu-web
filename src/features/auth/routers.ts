@@ -4,6 +4,8 @@ import { type RouteRecordRaw } from 'vue-router';
 import ActiveAccountPage from './pages/active-account/ActiveAccountPage.vue';
 import GoogleLoginPage from './pages/google-login/GoogleLoginPage.vue';
 import LoginPage from './pages/login/LoginPage.vue';
+import ProfilePage from './pages/profile/ProfilePage.vue';
+import MainLayout from '@/layouts/MainLayout.vue';
 
 const authRouters: Array<RouteRecordRaw> = [
   {
@@ -35,20 +37,20 @@ const authRouters: Array<RouteRecordRaw> = [
       },
     ],
   },
-  // {
-  //     path: '/',
-  //     component: MainLayout,
-  //     children: [
-  //         {
-  //             path: '/my-profile',
-  //             name: PageName.PROFILE_PAGE,
-  //             component: ProfilePage,
-  //             meta: {
-  //                 requiresAuth: true,
-  //             },
-  //         },
-  //     ],
-  // },
+  {
+    path: '/',
+    component: MainLayout,
+    children: [
+      {
+        path: '/my-profile',
+        name: PageName.PROFILE_PAGE,
+        component: ProfilePage,
+        meta: {
+          requiresAuth: true,
+        },
+      },
+    ],
+  },
 ];
 
 export default authRouters;

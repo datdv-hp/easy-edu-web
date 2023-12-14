@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import icons from '@/assets/icons';
 import { useRole } from '@/common/stores/role.store';
 import { BaseButton, ProfileItem } from '@/components';
 import { formatCurrencyVND } from '@/features/tuition-fee/helpers';
@@ -18,19 +17,19 @@ const { t } = useI18n();
 const paymentInfo = computed(() => {
     const _paymentInfo = [
         {
-            icon: icons.keyIcon,
+            icon: '$custom.dollar-circle',
             title: t('tuitionFee.detail.payment.value'),
             description: formatCurrencyVND(store.detail?.payValue || 0),
             isShow: true,
         },
         {
-            icon: icons.keyIcon,
+            icon: '$custom.money-receive',
             title: t('tuitionFee.detail.payment.paidValue'),
             description: formatCurrencyVND(store.detail?.paidValue || 0),
             isShow: true,
         },
         {
-            icon: icons.keyIcon,
+            icon: '$custom.money-send',
             title: t('tuitionFee.detail.payment.shortageValue'),
             description: formatCurrencyVND(store.detail?.shortageValue || 0),
             isShow: true,
@@ -54,7 +53,8 @@ function handleClickPay() {
         </div>
         <BaseButton
             v-if="!store.isUpdating && isAbleToPay && role.tuition?.update"
-            size="small"
+            size="extra-small"
+            class="ms-4 px-0"
             :label="$t('common.button.pay')"
             @click.stop="handleClickPay"
         />
@@ -66,7 +66,7 @@ function handleClickPay() {
             :key="`${item.description}${index}`"
         >
             <ProfileItem
-                :icon="item.icon"
+                :icon-string="item.icon"
                 :title="item.title"
                 :description="(item.description as string)"
             />

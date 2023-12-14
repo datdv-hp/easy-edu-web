@@ -21,6 +21,10 @@ export const classCreationFormSchema = yup.object({
       }
     })
     .label('classroom.endDate'),
+  paymentDate: yup.object({
+    startDate: yup.date().required().label('classroom.paymentStartDate'),
+    endDate: yup.date().required().label('classroom.paymentEndDate'),
+  }).required(),
   courseId: yup.string().required().label('classroom.course'),
   participantIds: yup.array().nullable().label('classroom.participants'),
   teacherIds: yup.array().nullable().label('classroom.teachers'),

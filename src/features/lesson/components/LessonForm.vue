@@ -34,7 +34,12 @@ import { createLessonFormSchema, updateLessonFormSchema } from '../schema';
 import InputTextItem from './InputTextItem.vue';
 import LessonTimeItem from './LessonTimeItem.vue';
 import { googleAuthApi } from '@/features/auth/services';
-import { localStorageGoogleAuthService } from '@/common/storages';
+import {
+  GOOGLE_AUTH_SERVICE_KEY,
+  localStorageGoogleAuthService,
+} from '@/common/storages';
+import { useLocalStorage } from '@vueuse/core';
+import { onBeforeMount } from 'vue';
 
 const { t } = useI18n();
 const store = useLessonStore();
@@ -77,35 +82,58 @@ const { value: documents } = useField<string[]>('documents', undefined, {
 });
 const { meta: lessonTimeListMeta } = useField('timeList');
 
+// Google
+const googleCode = useLocalStorage(
+  GOOGLE_AUTH_SERVICE_KEY.GOOGLE_LOGIN_CODE,
+  localStorageGoogleAuthService.getGoogleLoginCode(),
+  { listenToStorageChanges: true, initOnMounted: true },
+);
+const googleEmail = useLocalStorage(
+  GOOGLE_AUTH_SERVICE_KEY.GOOGLE_LOGIN_EMAIL,
+  localStorageGoogleAuthService.getGoogleLoginEmail(),
+  { listenToStorageChanges: true, initOnMounted: true },
+);
+
 const isValidSubmit = computed(() => {
   return (
     meta.value.valid &&
     !compareFormData(oldForm.value, formValue) &&
-    (!formValue.isUseGoogleMeet ||
-      (formValue.isUseGoogleMeet && googleAuthStore.googleCode))
+    (!formValue.isUseGoogleMeet || (formValue.isUseGoogleMeet && googleCode.value))
   );
 });
 const isValidPreview = computed(() => meta.value.valid);
 
+const resetGoogleInfo = () => {
+  localStorageGoogleAuthService.resetGoogleLoginCode();
+  localStorageGoogleAuthService.resetGoogleLoginEmail();
+};
+
+onBeforeMount(async () => {
+  const googleCode = localStorageGoogleAuthService.getGoogleLoginCode();
+  const googleEmail = localStorageGoogleAuthService.getGoogleLoginEmail();
+  if (googleCode && googleEmail) {
+    await getGoogleEmail();
+  } else {
+    console.log('reset', googleCode, googleEmail);
+    resetGoogleInfo();
+  }
+});
+
 const getGoogleEmail = async () => {
   googleAuthApi
     .getGoogleLoginEmail({
-      code: googleAuthStore.googleCode,
+      code: googleCode.value,
       redirectUri: GOOGLE_LOGIN_REDIRECT_URI,
     })
     .then((res) => {
       if (!res.success) {
-        localStorageGoogleAuthService.resetGoogleLoginCode();
-        localStorageGoogleAuthService.resetGoogleLoginEmail();
+        resetGoogleInfo();
       }
     });
 };
 
 onMounted(async () => {
-  store.isFetching = true;
-  if (googleAuthStore.googleCode) {
-    getGoogleEmail();
-  }
+  dialogStore.isFetching = true;
   if (dialogStore.isUpdate) {
     const response = await store.getDetail(dialogStore.currentId);
     if (!response.success) {
@@ -168,7 +196,6 @@ onMounted(async () => {
     ]);
   }
   dialogStore.isFetching = false;
-  store.isFetching = false;
 });
 
 const handleCloseDialog = () => {
@@ -290,14 +317,14 @@ const handleUpdateErrors = (error: IResponseError) => {
 const handleCreate = handleSubmit(async () => {
   dialogStore.isSubmitting = true;
   const times = store.getPreviewTimesToSubmit();
-  if (formValue.isUseGoogleMeet && !googleAuthStore.googleCode) {
+  if (formValue.isUseGoogleMeet && !googleCode.value) {
     await getGoogleLoginLink();
   }
 
   const body = generateLessons(
     {
       ...formValue,
-      code: formValue.isUseGoogleMeet ? googleAuthStore.googleCode : undefined,
+      code: formValue.isUseGoogleMeet ? googleCode.value : undefined,
       redirectUri: formValue.isUseGoogleMeet ? GOOGLE_LOGIN_REDIRECT_URI : undefined,
     },
     times,
@@ -320,14 +347,13 @@ const handleCreate = handleSubmit(async () => {
 
 const handleClickUpdate = handleSubmit(async (values) => {
   dialogStore.isSubmitting = true;
-  const googleCode = isUseGoogleMeet ? googleAuthStore.googleCode : undefined;
   const diffFormData = getDiffFormData(oldForm.value, values, [
     'startTime',
     'endTime',
     'startDate',
   ]);
   if (diffFormData?.isUseGoogleMeet) {
-    diffFormData['code'] = googleCode;
+    diffFormData['code'] = googleCode.value;
   }
   const res = await store.update(dialogStore.currentId as string, diffFormData);
   if (res.success) {
@@ -393,7 +419,6 @@ const onClickDocumentButton = (index: number) => {
   }
   setFieldValue('documents', document);
 };
-
 
 const isAbleToUpdate = computed(() => {
   return (
@@ -558,8 +583,8 @@ defineExpose({
           label-class="ml-2"
           :default="true"
         />
-        <div v-if="googleAuthStore.googleEmail" class="google-email">
-          <span>{{ googleAuthStore.googleEmail }} </span>
+        <div v-if="googleEmail" class="google-email">
+          <span>{{ googleEmail }} </span>
           <v-tooltip text="Chuyển đổi tài khoản" :delay-open="150" location="top">
             <template #activator="{ props }">
               <v-icon v-bind="props" icon="mdi-sync" @click.stop="getGoogleLoginLink"

@@ -1,11 +1,6 @@
 import type { IBodyResponse } from '@/common/interfaces';
 import axiosInstance from '@/plugins/axios';
 import { ApiService } from '@/plugins/axios/api';
-import {
-  getUpdateManagerProfileFormData,
-  getUpdateStudentProfileFormData,
-  getUpdateTeacherProfileFormData,
-} from '../helpers';
 import type { IBodyLogin, ILoginResponse } from '../interfaces';
 
 class AuthApiService extends ApiService {
@@ -20,23 +15,8 @@ class AuthApiService extends ApiService {
     return this.client.get('/user/my-profile');
   }
 
-  _updateManagerProfile<R>(params: Record<string, unknown>): Promise<IBodyResponse<R>> {
-    return this.client.patch(
-      '/user/my-profile-manager',
-      getUpdateManagerProfileFormData(params),
-    );
-  }
-  _updateTeacherProfile<R>(params: Record<string, unknown>): Promise<IBodyResponse<R>> {
-    return this.client.patch(
-      '/user/my-profile-teacher',
-      getUpdateTeacherProfileFormData(params),
-    );
-  }
-  _updateStudentProfile<R>(params: Record<string, unknown>): Promise<IBodyResponse<R>> {
-    return this.client.patch(
-      '/user/my-profile-student',
-      getUpdateStudentProfileFormData(params),
-    );
+  _updateProfile<R>(params: Record<string, unknown>): Promise<IBodyResponse<R>> {
+    return this.client.patch('/user/my-profile', params);
   }
 }
 

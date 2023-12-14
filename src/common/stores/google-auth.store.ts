@@ -14,10 +14,7 @@ export const useGoogleAuthStore = defineStore('googleAuthStore', () => {
     GOOGLE_AUTH_SERVICE_KEY.GOOGLE_LOGIN_CODE,
     localStorageGoogleAuthService.getGoogleLoginCode(),
   );
-  const googleEmail = useLocalStorage(
-    GOOGLE_AUTH_SERVICE_KEY.GOOGLE_LOGIN_EMAIL,
-    localStorageGoogleAuthService.getGoogleLoginEmail(),
-  );
+  const googleEmail = ref(localStorageGoogleAuthService.getGoogleLoginEmail());
   const _googleLoginLink = ref<string | undefined>(undefined);
   const generateGoogleLoginLink = async (params: IGoogleLoginLinkParams) => {
     const response = (await googleAuthApi.getGoogleLoginLink(
@@ -30,6 +27,9 @@ export const useGoogleAuthStore = defineStore('googleAuthStore', () => {
   function setGoogleLoginLink(link: string | undefined) {
     _googleLoginLink.value = link;
   }
+  function getGoogleEmail() {
+    googleEmail.value = localStorageGoogleAuthService.getGoogleLoginEmail();
+  }
   const googleLoginLink = computed(() => _googleLoginLink.value);
   return {
     generateGoogleLoginLink,
@@ -37,5 +37,6 @@ export const useGoogleAuthStore = defineStore('googleAuthStore', () => {
     setGoogleLoginLink,
     googleCode,
     googleEmail,
+    getGoogleEmail,
   };
 });

@@ -35,6 +35,7 @@ import { CheckMarkRenderer } from '../../../helpers';
 import { settingTimekeepingApiService } from '@/features/setting/services/settingTimekeeping.api';
 import { ITimeKeepingSetting } from '@/features/setting/interfaces/setting-timekeeping.interfaces';
 import { useRole } from '@/common/stores/role.store';
+import { nextTick } from 'vue';
 
 const role = useRole();
 const store = useTimekeepingStore();
@@ -406,10 +407,12 @@ const gridInstance = ref<Grid>();
 onMounted(async () => {
   await fetchData();
   generateDataTimekeepingTable();
-  scrollTeacherTable.value = (tableTeacher.value as any)?.$el.getElementsByClassName(
-    'v-table__wrapper',
-  )[0];
-  scrollTeacherTable.value.addEventListener('scroll', handleScrollTeacherTable);
+  await nextTick(() => {
+    scrollTeacherTable.value = (tableTeacher.value as any)?.$el.getElementsByClassName(
+      'v-table__wrapper',
+    )[0];
+    scrollTeacherTable.value?.addEventListener('scroll', handleScrollTeacherTable);
+  });
 });
 
 const handleScrollTeacherTable = async () => {
@@ -430,7 +433,7 @@ onBeforeUnmount(() => {
     year: new Date().getFullYear(),
     month: new Date().getMonth(),
   };
-  scrollTeacherTable.value.removeEventListener('scroll', handleScrollTeacherTable);
+  scrollTeacherTable.value?.removeEventListener('scroll', handleScrollTeacherTable);
 });
 
 const handleErrorTimekeeping = (error: IResponseError) => {
@@ -790,8 +793,8 @@ onUnmounted(() => {
   align-items: center;
   padding: 14.5px 16px;
   font-size: 14px;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
   border: 1px solid #00000014;
   border-bottom: none;
   overflow: hidden;
@@ -805,8 +808,8 @@ onUnmounted(() => {
   border-left: 1px solid #00000014;
   border-right: 1px solid #00000014;
   border-bottom: 1px solid #00000014;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
   overflow: hidden;
 }
 

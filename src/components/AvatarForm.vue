@@ -7,15 +7,12 @@
       </div>
     </div>
     <v-btn
-      class="text-none px-4 text--neutral-2"
-      color="#464962"
+      class="upload-btn"
       variant="outlined"
       @click="onUploadNewAvatar()"
+      prepend-icon="$custom.upload-cloud"
       :loading="loading"
     >
-      <template v-slot:prepend>
-        <v-img :src="IconUpload"></v-img>
-      </template>
       {{ $t('common.button.uploadAvatar') }}
     </v-btn>
     <input
@@ -30,7 +27,6 @@
 <script lang="ts" setup>
 import AvatarDefault from '@/assets/images/avatar-default.png';
 import { ref, computed } from 'vue';
-import IconUpload from '@/assets/icons/dialog/ic-upload-cloud.svg';
 import { commonApiService } from '@/features/common/services/common.api';
 import icons from '@/assets/icons';
 
@@ -100,6 +96,16 @@ const handleClickDeleteAvatar = () => {
     &:hover {
       background-color: $color-primary-3;
     }
+  }
+}
+.upload-btn {
+  border: 1px solid $color-neutral-6;
+  color: $color-neutral-4;
+  text-transform: none;
+  font-weight: 400;
+  &:hover {
+    color: $color-neutral-1;
+    border-color: $color-neutral-4;
   }
 }
 </style>

@@ -65,7 +65,7 @@ onBeforeUnmount(() => {
 <template>
   <BaseDialog
     @close="onCloseDialog"
-    :overlay="store.isFetching && dialogStore.isUpdate"
+    :overlay="dialogStore.isFetching"
     :loading="dialogStore.isSubmitting"
     :disabled="!isValidSubmit || !!store.errorPreviewTimeIndexes?.length"
     :title="formTitle"

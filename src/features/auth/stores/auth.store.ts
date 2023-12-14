@@ -10,8 +10,7 @@ export const useAuthStore = defineStore('authStore', () => {
   // profile name, email, etc
 
   async function logoutAction() {
-    await authApi.logout();
-    logout();
+    authApi.logout().then(() => logout());
   }
 
   async function login(body: IBodyLogin) {

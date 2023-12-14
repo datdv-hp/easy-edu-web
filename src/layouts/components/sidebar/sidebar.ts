@@ -163,6 +163,7 @@ export const sidebarItems = () => {
         role: role.tuition?.view || role.tuition?.viewPersonal,
     },
       {
+        groupName: t('app.sidebar.system.groupName'),
         items: [
           {
             title: t('app.sidebar.setting.groupName'),

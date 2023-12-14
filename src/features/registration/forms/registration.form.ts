@@ -21,6 +21,11 @@ export const useRegisterForm = () => {
     resetField: _resetField,
   } = useForm({
     validationSchema: registerSchema,
+    initialValues: {
+      name: undefined,
+      email: undefined,
+      phone: '',
+    },
   });
   const {
     value: name,
@@ -46,6 +51,7 @@ export const useRegisterForm = () => {
     });
     if (res.success) {
       showSuccessNotification(t('registration.success.create'));
+      resetForm();
       return true;
     }
     showErrorNotification(t('registration.error.create'));

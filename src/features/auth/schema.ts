@@ -1,4 +1,5 @@
 import { FORM_VALIDATION, Regex } from '@/common/constants';
+import { dobSchema, genderSchema, nameSchema, phoneSchema } from '@/common/schema';
 import yup from '@/plugins/yup';
 
 const emailSchema = yup.string().required().matches(Regex.EMAIL);
@@ -28,4 +29,35 @@ export const changePasswordSchema = yup.object({
 
 export const forgotPasswordSchema = yup.object({
   email: emailSchema,
+});
+
+
+export const studentProfileUpdateFormSchema = yup.object({
+  name: nameSchema.required(),
+  email: emailSchema.required(),
+  dob: dobSchema.required(),
+  phone: phoneSchema.required(),
+  avatar: yup.string().nullable(),
+  gender: genderSchema.required(),
+});
+
+export const managerProfileUpdateFormSchema = yup.object({
+  name: nameSchema.required(),
+  email: emailSchema.required(),
+  dob: dobSchema.required(),
+  phone: phoneSchema.required(),
+  avatar: yup.string().nullable(),
+  gender: genderSchema.required(),
+});
+export const teacherProfileUpdateFormSchema = yup.object({
+  name: nameSchema.required(),
+  email: emailSchema.required(),
+  dob: dobSchema.required(),
+  phone: phoneSchema.required(),
+  avatar: yup.string().nullable(),
+  gender: genderSchema.required(),
+  teacherDetail: yup.object({
+      degree: yup.string().optional(),
+      note: yup.string().optional(),
+  }),
 });

@@ -68,9 +68,7 @@ const appEn = {
       },
     },
     system: {
-      notification: {
-        name: 'Thông báo',
-      },
+      groupName: 'Hệ thống',
       setting: {
         name: 'Cài đặt',
       },

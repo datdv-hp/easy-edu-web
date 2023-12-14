@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 import logo from '@/assets/images/logo.svg';
+import { PageName } from '@/common/constants';
 import { translateYupError } from '@/common/helpers';
+import { phoneMask } from '@/common/mask';
+import router from '@/plugins/vue-router';
 import { useEventListener } from '@vueuse/core';
+import { vMaska } from 'maska';
 import { reactive, ref } from 'vue';
 import { useRegisterForm } from '../../forms/registration.form';
-import { phoneMask } from '@/common/mask';
-import { vMaska } from 'maska';
-import router from '@/plugins/vue-router';
-import { PageName } from '@/common/constants';
 
 const registrationForm = reactive(useRegisterForm());
 const isSubmitting = ref(false);
@@ -20,9 +20,7 @@ useEventListener('keydown', (e: KeyboardEvent) => {
 async function handleSubmit() {
   isSubmitting.value = true;
   await registrationForm.submitForm();
-  setTimeout(() => {
-    isSubmitting.value = false;
-  }, 3000);
+  isSubmitting.value = false;
 }
 
 function goBackToLogin() {
@@ -90,7 +88,6 @@ function goBackToLogin() {
         <div class="text-center mt-2">
           <v-btn
             class="w-100"
-            :loading="isSubmitting"
             height="44"
             color="primary"
             variant="outlined"

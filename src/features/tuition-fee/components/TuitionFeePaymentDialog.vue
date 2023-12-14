@@ -76,7 +76,7 @@ const handleClickCreatePayment = handleSubmit(async (values) => {
     dialogStore.setIsSubmitting(true);
     const res = await store.createPayment(route.params.id as string, values);
     if (res.success) {
-        showSuccessNotification(t('tuitionFee.success.create'));
+        showSuccessNotification(t('tuitionFee.success.payment'));
         detail.getPaymentHistories(route.params.id as string);
         store.getDetail(route.params.id as string);
         handleCloseDialog();

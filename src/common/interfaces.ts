@@ -237,3 +237,9 @@ export type FilterResult = {
   text: string;
   field: string;
 };
+
+export type IFilterType = {
+  name: string; // field name in filter form
+  options?: IOption[];
+  isDate?: boolean;
+};

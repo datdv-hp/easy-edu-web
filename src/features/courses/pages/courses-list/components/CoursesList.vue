@@ -11,6 +11,7 @@ import {
   TableHeader,
 } from '@/components';
 import { useCoursesStore } from '@/features/courses/store';
+import { formatCurrencyVND } from '@/features/tuition-fee/helpers';
 import { showDialogConfirm } from '@/plugins';
 import { onUnmounted } from 'vue';
 import { useI18n } from 'vue-i18n';
@@ -122,7 +123,7 @@ onUnmounted(() => {
             :order-by="store.courseListQuery?.orderBy"
             :direction="store.courseListQuery?.orderDirection"
           />
-          <th class="text-left ws-nowrap minW-200px w-25">
+          <th class="text-left ws-nowrap minW-200px w-35">
             {{ t('courses.list.table.name') }}
           </th>
           <SortTableColumnHeader
@@ -132,7 +133,11 @@ onUnmounted(() => {
             :order-by="store.courseListQuery?.orderBy"
             :direction="store.courseListQuery?.orderDirection"
           />
-          <th class="text-left ws-nowrap w-35">
+
+          <th class="text-left ws-nowrap">
+            {{ t('courses.list.table.tuition') }}
+          </th>
+          <th class="text-left ws-nowrap w-20">
             {{ t('courses.list.table.state') }}
           </th>
         </tr>
@@ -160,15 +165,8 @@ onUnmounted(() => {
           </td>
           <EllipsisTableData :text="item.name" />
           <td>{{ item.times }}</td>
-          <td>
-            <v-tooltip :text="item.courseFormNames.join(', ')" location="top left">
-              <template v-slot:activator="{ props }">
-                <span v-bind="props" class="ellipsis-one-line">{{
-                  item.courseFormNames.join(', ')
-                }}</span>
-              </template>
-            </v-tooltip>
-          </td>
+          <td>{{ formatCurrencyVND(item.tuition) }}</td>
+          <EllipsisTableData :text="item.courseFormNames.join(', ')" />
         </tr>
       </template>
     </TableBase>

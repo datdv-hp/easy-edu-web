@@ -281,33 +281,24 @@ watch(
 }
 
 :deep(.toastui-calendar-day-names) {
-  border-top-right-radius: 8px;
-  border-top-left-radius: 8px;
-  border-left: 1px solid rgb(229, 229, 229);
-  border-right: 1px solid rgb(229, 229, 229);
-  border-top: 1px solid rgb(229, 229, 229);
-  border-bottom: none !important;
+  border: none !important;
+  border-radius: 8px;
 }
 
-:deep(.toastui-calendar-time) {
-  // height: 100% !important;
+:deep(.toastui-calendar-layout) {
+  border: 1px solid rgb(229, 229, 229);
+  border-radius: 4px;
 }
 
 :deep(.toastui-calendar-week-view-day-names) {
   height: 43px !important;
 }
 
-// :deep(.toastui-calendar-month-daygrid) {
-//   border-bottom-left-radius: 8px;
-//   border-bottom-right-radius: 8px;
-//   border: 1px solid rgb(229, 229, 229);
-//   border-top: none !important;
-// }
+:deep(.toastui-calendar-time:not(.toastui-calendar-grid-selection)) {
+  height: calc(100% - 37px) !important; // 37px is height of header
+}
 
-// :deep(.toastui-calendar-time) {
-//   border-bottom-left-radius: 8px;
-//   border-bottom-right-radius: 8px;
-//   border: 1px solid rgb(229, 229, 229);
-//   border-top: none !important;
-// }
+:deep(.toastui-calendar-grid-selection) {
+  border-radius: 8px;
+}
 </style>

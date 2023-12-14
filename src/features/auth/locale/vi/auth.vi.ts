@@ -35,6 +35,18 @@ const authVi = {
     login: 'Đăng nhập không thành công',
     updatePassword: 'Cập nhật mật khẩu không thành công',
   },
+  userProfile: {
+    profile: {
+      title: 'Hồ sơ cá nhân',
+    },
+    edit: {
+      title: 'Chỉnh sửa hồ sơ cá nhân',
+    },
+    notification: {
+      success: 'Cập nhật hồ sơ thành công',
+      error: 'Cập nhật hồ sơ không thành công',
+    },
+  },
 };
 
 export default authVi;

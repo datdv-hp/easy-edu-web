@@ -133,6 +133,12 @@ const toggleCollapse = () => {
 
 :deep(.v-list-item) {
   color: $color-text-black;
+  .v-list-item__prepend {
+    .v-icon {
+      opacity: 0.8;
+      font-size: 20px;
+    }
+  }
 }
 
 .sidebar-items {

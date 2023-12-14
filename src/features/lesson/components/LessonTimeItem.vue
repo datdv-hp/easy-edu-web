@@ -102,8 +102,8 @@ onMounted(() => {
           :format="DATE_TIME_FORMAT.YYYY_MM_DD_HYPHEN"
           :is-required="true"
           :placeholder="DATE_TIME_FORMAT.YYYY_MM_DD_HYPHEN"
-          :min="new Date()"
-          :max="item.endDate as Date"
+          :min="dayjs().toDate()"
+          :max="item.endDate ? dayjs(item.endDate).toDate() : undefined"
           :clearable="false"
           :disabled="isDisable || !isAbleToUpdate"
         />
@@ -148,7 +148,7 @@ onMounted(() => {
           :format="DATE_TIME_FORMAT.YYYY_MM_DD_HYPHEN"
           :is-required="true"
           :placeholder="DATE_TIME_FORMAT.YYYY_MM_DD_HYPHEN"
-          :min="item.startDate as Date"
+          :min="item.startDate ? dayjs(item.startDate).toDate() : undefined"
           :clearable="false"
           :disabled="isDisable || !isAbleToUpdate"
         />

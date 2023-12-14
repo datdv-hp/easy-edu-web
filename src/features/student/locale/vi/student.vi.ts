@@ -22,6 +22,10 @@ const studentVi = {
       label: 'Chi tiết khóa học',
     },
     addOtherCourse: 'Thêm khóa học khác',
+    presenter: {
+      label: 'Nhân viên tư vấn',
+      placeholder: 'Chọn nhân viên tư vấn',
+    },
     code: 'ID',
   },
   notification: {

@@ -30,6 +30,8 @@ import { useI18n } from 'vue-i18n';
 import { useRouter } from 'vue-router';
 import CourseDetail from './CourseDetail.vue';
 
+const emit = defineEmits(['create:success']);
+
 const { t } = useI18n();
 const router = useRouter();
 const dialogStore = useStudentDialog();
@@ -67,6 +69,7 @@ onMounted(async () => {
     store.getCourseOptions(),
     store.getSubjectOptions(),
     store.getRoleDropdown(),
+    store.getPresenterDropdown(),
   ]);
   // lấy ra thông tin học viên chỉnh sửa
   if (isUpdate.value) {
@@ -181,8 +184,12 @@ const handleClickCreate = handleSubmit(async (values) => {
   });
   if (res.success) {
     showSuccessNotification(t('student.notification.success.createStudent'));
+    if (dialogStore.initialValues?.id) {
+      emit('create:success');
+    } else {
+      store.getList();
+    }
     handleCloseDialog();
-    store.getList();
     return;
   }
   if (res?.errors?.length) {

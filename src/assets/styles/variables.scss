@@ -8,7 +8,7 @@ $color-background: #f8f7fa;
 $color-border: rgba(0, 0, 0, 0.12);
 $color-border-hover: #87858c;
 $color-border-focus: #7367f0;
-$color-border-focus-secondary: #BFC4EA;
+$color-border-focus-secondary: #bfc4ea;
 $color-text-primary: #333238;
 $color-text-secondary: #33303cde;
 $color-sidebar-item-title: #828086;
@@ -26,104 +26,106 @@ $offset-table-height-in-list: 60px + 80px + 60px + 16px; // 60px: height of head
 
 $header-document-height: 74px;
 $sidebar-document-width: 260px;
+$height-table-header: 60px;
+$height-header-bar: 60px;
 
 $grid-breakpoints: (
-    xs: 399px,
-    sm: 575px,
-    md: 767px,
-    lg: 991px,
-    xl: 1199px,
-    xxl: 1399px,
+  xs: 399px,
+  sm: 575px,
+  md: 767px,
+  lg: 991px,
+  xl: 1199px,
+  xxl: 1399px,
 );
 
 // z-index management
 $zIndex: (
-    menu: 100,
-    popup: 200,
-    chatBox: 300,
-    searchForm: 150,
+  menu: 100,
+  popup: 200,
+  chatBox: 300,
+  searchForm: 150,
 );
 
 $roundeds: (
-    1: 4px,
-    1_5: 6px,
-    2: 8px,
-    2_5: 10px,
-    3: 12px,
-    4: 16px,
-    5: 20px,
+  1: 4px,
+  1_5: 6px,
+  2: 8px,
+  2_5: 10px,
+  3: 12px,
+  4: 16px,
+  5: 20px,
 );
 
 $font-sizes: (
-    3: 12px,
-    3_5: 14px,
-    4: 16px,
-    4_5: 18px,
-    5: 20px,
-    5_5: 22px,
-    6: 24px,
+  3: 12px,
+  3_5: 14px,
+  4: 16px,
+  4_5: 18px,
+  5: 20px,
+  5_5: 22px,
+  6: 24px,
 );
 
 $opacities: (
-    0: 0,
-    50: 0.5,
-    1: 1,
+  0: 0,
+  50: 0.5,
+  1: 1,
 );
 
 $font-weights: (
-    400: 400,
-    500: 500,
-    600: 600,
-    700: 700,
-    900: 900,
+  400: 400,
+  500: 500,
+  600: 600,
+  700: 700,
+  900: 900,
 );
 
 $gaps: (
-    1: 4px,
-    2: 8px,
-    2_5: 10px,
-    3: 12px,
-    4: 16px,
-    5: 20px,
-    6: 24px,
-    7: 28px,
-    8: 32px,
-    9: 36px,
-    10: 40px,
-    11: 44px,
-    12: 48px,
+  1: 4px,
+  2: 8px,
+  2_5: 10px,
+  3: 12px,
+  4: 16px,
+  5: 20px,
+  6: 24px,
+  7: 28px,
+  8: 32px,
+  9: 36px,
+  10: 40px,
+  11: 44px,
+  12: 48px,
 );
 
 $widths: (
-    5: 5%,
-    10: 10%,
-    12: 12%,
-    15: 15%,
-    16: 16%,
-    20: 20%,
-    25: 25%,
-    30: 30%,
-    35: 35%,
-    40: 40%,
-    45: 45%,
-    50: 50%,
-    60: 60%,
-    70: 70%,
+  5: 5%,
+  10: 10%,
+  12: 12%,
+  15: 15%,
+  16: 16%,
+  20: 20%,
+  25: 25%,
+  30: 30%,
+  35: 35%,
+  40: 40%,
+  45: 45%,
+  50: 50%,
+  60: 60%,
+  70: 70%,
 );
 
 $widthsInPixel: (
-    50px: 50px,
-    52px: 52px,
-    56px: 56px,
-    72px: 72px,
-    100px: 100px,
-    120px: 120px,
-    150px: 150px,
-    160px: 160px,
-    190px: 190px,
-    200px: 200px,
-    250px: 250px,
-    300px: 300px,
+  50px: 50px,
+  52px: 52px,
+  56px: 56px,
+  72px: 72px,
+  100px: 100px,
+  120px: 120px,
+  150px: 150px,
+  160px: 160px,
+  190px: 190px,
+  200px: 200px,
+  250px: 250px,
+  300px: 300px,
 );
 
 $border-hover-color: rgb(75, 90, 92);
@@ -136,25 +138,25 @@ $color-error-message: #ea5455;
 $font-be-vietnam-pro: 'Be Vietnam Pro', sans-serif;
 
 $colors: (
-    'primary-1': #6d79e8,
-    'primary-2': #9098de,
-    'primary-3': #bfc4ea,
-    'primary-4': #f2f1ff,
-    'primary-5': #f4f7ff,
-    'primary-6': #1890FF,
-    'secondary-1': #f2994a,
-    'secondary-2': #4057d0,
-    'secondary-3': #1625ab,
-    'neutral-1': #343458,
-    'neutral-2': #464962,
-    'neutral-3': #5a5c6f,
-    'neutral-4': #6d6f81,
-    'neutral-5': #adaeba,
-    'neutral-6': #e1e3e9,
-    'neutral-7': #f3f4f8,
-    'neutral-black': #212121,
-    'black': #1b1b33,
-    'white': #ffffff,
+  'primary-1': #6d79e8,
+  'primary-2': #9098de,
+  'primary-3': #bfc4ea,
+  'primary-4': #f2f1ff,
+  'primary-5': #f4f7ff,
+  'primary-6': #1890ff,
+  'secondary-1': #f2994a,
+  'secondary-2': #4057d0,
+  'secondary-3': #1625ab,
+  'neutral-1': #343458,
+  'neutral-2': #464962,
+  'neutral-3': #5a5c6f,
+  'neutral-4': #6d6f81,
+  'neutral-5': #adaeba,
+  'neutral-6': #e1e3e9,
+  'neutral-7': #f3f4f8,
+  'neutral-black': #212121,
+  'black': #1b1b33,
+  'white': #ffffff,
 );
 
 $color-primary-1: #6d79e8;
@@ -162,7 +164,7 @@ $color-primary-2: #9098de;
 $color-primary-3: #bfc4ea;
 $color-primary-4: #f2f1ff;
 $color-primary-5: #f4f7ff;
-$color-primary-6: #1890FF;
+$color-primary-6: #1890ff;
 $color-secondary-1: #f2994a;
 $color-secondary-2: #4057d0;
 $color-secondary-3: #1625ab;
@@ -185,7 +187,7 @@ $color-state-success: #439f6e;
 $color-state-warning: #ebbc2e;
 $color-state-info: #2f80ed;
 $color-state-error: #ed3a3a;
-$color-state-disabled: #5A5C6F;
+$color-state-disabled: #5a5c6f;
 
 $color-gradient-1: linear-gradient(181.77deg, rgba(27, 27, 51, 0) 22.75%, #1b1b33 114.2%);
 $button-border-color: #adaeba;
@@ -193,7 +195,7 @@ $color-violet-new: #4057d0;
 $color-violet-new-1: #6d79e8;
 $color-violet-new-1-opacity-30: #6d79e84d;
 $color-violet-new-1-filter: invert(53%) sepia(75%) saturate(3983%) hue-rotate(215deg)
-    brightness(99%) contrast(83%);
+  brightness(99%) contrast(83%);
 $color-violet-new-2: #918ffd;
 $color-violet-03: #f1f5ff;
 $color-accent-violet-03: #f2f1ff;
@@ -219,8 +221,8 @@ $color-black: #000000;
 $color-white: #ffffff;
 $color-white-opacity-30: #ffffff4d;
 $color-white-filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(0deg)
-    brightness(200%) contrast(100%);
+  brightness(200%) contrast(100%);
 $color-popper-box-shadow: rgba(34, 53, 89, 0.13);
-$color-polar-green: #52C41A;
+$color-polar-green: #52c41a;
 
 $margin-x-content-landing-page: 24px;

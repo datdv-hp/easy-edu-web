@@ -1,4 +1,8 @@
-import { DEFAULT_FIRST_PAGE, DEFAULT_LIMIT_FOR_PAGINATION } from '@/common/constants';
+import {
+  DATE_TIME_FORMAT,
+  DEFAULT_FIRST_PAGE,
+  DEFAULT_LIMIT_FOR_PAGINATION,
+} from '@/common/constants';
 import HeaderTooltip from '@/features/classroom/components/HeaderTooltip.vue';
 import plugins from '@/plugins';
 import dayjs from 'dayjs';
@@ -41,6 +45,7 @@ export const convertToClassroom = (data: Record<string, unknown>): IClassroom =>
     countFinishedLesson: get(data, 'countFinishedLesson', 0) as number,
     countInProgressLesson: get(data, 'countInProgressLesson', 0) as number,
     syllabusIds: get(data, 'syllabusIds') as string[],
+    paymentStartDate: data.paymentStartDate as string,
   };
 };
 
@@ -55,14 +60,25 @@ export const getClassroomDetail = (data: Record<string, unknown>): IClassroom =>
 export const getClassroomFormData = (
   params: Record<string, unknown>,
 ): ICreateClassRoomBody | IUpdateClassroomBody => {
+  const paymentDate = params.paymentDate as Record<string, unknown>;
   return {
     name: params.name as string,
     courseId: params.courseId as string,
     startDate: params.startDate
-      ? dayjs(params.startDate as string).format('YYYY-MM-DD')
+      ? dayjs(params.startDate as string).format(DATE_TIME_FORMAT.YYYY_MM_DD_HYPHEN)
       : undefined,
     endDate: params.endDate
-      ? dayjs(params.endDate as string).format('YYYY-MM-DD')
+      ? dayjs(params.endDate as string).format(DATE_TIME_FORMAT.YYYY_MM_DD_HYPHEN)
+      : undefined,
+    paymentDate: paymentDate
+      ? {
+          startDate: dayjs(params.paymentStartDate as string).format(
+            DATE_TIME_FORMAT.YYYY_MM_DD_HYPHEN,
+          ),
+          endDate: dayjs(params.paymentEndDate as string).format(
+            DATE_TIME_FORMAT.YYYY_MM_DD_HYPHEN,
+          ),
+        }
       : undefined,
     participantIds: params.participantIds as string[],
     color: params.color as string,
