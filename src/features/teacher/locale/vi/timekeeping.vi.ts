@@ -13,13 +13,13 @@ const timekeepingVi = {
   },
   update: {
     [ErrorCode.ITEM_NOT_FOUND]: {
-      user: 'Chấm công không thành công. Vì chấm giảng viên tồn tại',
-      lesson: 'Chấm công không thành công. Vì buổi học không tồn tại',
-      timekeeping: 'Chấm công không thành công. Vì chấm công không tồn tại',
+      user: 'Giảng viên tồn tại',
+      lesson: 'Buổi học không tồn tại',
+      timekeeping: 'Thông tin chấm công không tồn tại',
     },
     [ErrorCode.ITEM_INVALID]: {
-      lessonUpcoming: 'Chấm công không thành công. Vì buổi học chưa diễn ra',
-      lessonCompleted: 'Chấm công không thành công. Vì buổi học đã kết thúc',
+      lessonUpcoming: 'Buổi học chưa diễn ra',
+      lessonCompleted: 'Buổi học đã kết thúc',
     },
   },
   error: {

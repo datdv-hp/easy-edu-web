@@ -28,13 +28,13 @@ const studentEn = {
       create: 'Thêm mới học viên không thành công',
       edit: 'Cập nhật học viên không thành công',
       delete: 'Xóa học viên không thành công',
-      deleteNotExistedStudent: 'Xóa học viên không thành công. Vì học viên không tồn tại',
+      deleteNotExistedStudent: 'Học viên không tồn tại',
       deleteStudentHasLesson:
-        'Xóa học viên không thành công. Vì học viên đang có buổi học',
+        'Học viên đang có buổi học',
       createNotExistedCourse:
-        'Thêm mới học viên không thành công. Vì có khóa học không tồn tại',
+        'Có khóa học không tồn tại',
       createNotExistedSubject:
-        'Thêm mới học viên không thành công. Vì có học phần không tồn tại',
+        'Có học phần không tồn tại',
     },
     success: {
       createStudent: 'Thêm mới học viên thành công',

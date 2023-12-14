@@ -98,19 +98,20 @@ export default {
   },
   update: {
     [ErrorCode.ITEM_NOT_FOUND]: {
-      id: 'Cập nhật lớp không thành công. Vì lớp học không tồn tại',
+      id: 'Lớp học không tồn tại',
       participants: 'Học viên không tồn tại',
     },
     [ErrorCode.CONFLICT]: {
-      studentHasLesson: 'Cập nhật lớp học không thành công. Vì học viên đang có buổi học',
+      studentHasLesson: 'Học viên đang có buổi học',
     },
   },
   delete: {
     [ErrorCode.ITEM_NOT_FOUND]: {
-      classroom: 'Xóa lớp học không thành công. Vì lớp học không tồn tại',
+      classroom: 'Lớp học không tồn tại',
+      ids: 'Lớp học không tồn tại',
     },
     [ErrorCode.ITEM_ALREADY_EXIST]: {
-      lesson: 'Xóa lớp học không thành công. Vì lớp học đang có buổi học',
+      lesson: 'Lớp học đang có buổi học',
     },
   },
   total: 'Tổng số %{total} lớp học',

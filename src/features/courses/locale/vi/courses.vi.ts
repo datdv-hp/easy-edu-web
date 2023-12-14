@@ -118,12 +118,12 @@ const coursesVi = {
   },
   updateError: {
     [ErrorCode.ITEM_NOT_FOUND]: {
-      id: 'Cập nhật khóa học không thành công. Vì khóa học không tồn tại',
+      id: 'Khóa học không tồn tại',
       subjects: 'Học phần không tồn tại',
     },
     [ErrorCode.ITEM_ALREADY_EXIST]: {
       subjects:
-        'Cập nhật khóa học không thành công. Vì học phần đang có học viên đăng ký',
+        'Học phần đang có học viên đăng ký',
     },
   },
   deleteError: {
@@ -131,8 +131,8 @@ const coursesVi = {
       id: 'Xóa khóa học không thành công vì khóa học không tồn tại',
     },
     [ErrorCode.ITEM_ALREADY_EXIST]: {
-      student: 'Xóa khóa học không thành công. Vì khóa học đang có học viên',
-      classroom: 'Xóa khóa học không thành công. Vì khóa học đang có lớp học',
+      student: 'Khóa học đang có học viên',
+      classroom: 'Khóa học đang có lớp học',
     },
     [ErrorCode.ITEM_INVALID]: {
       lessonPast: 'Xóa buổi học không thành công vì buổi học đã kết thúc',

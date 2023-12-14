@@ -69,10 +69,10 @@ function goDetailPage(id: string) {
           >
             {{ $t('tuitionFee.table.studentName') }}
           </th>
-          <th class="text-left ws-nowrap minW-150px w-15">
+          <th class="text-left ws-nowrap minW-200px w-15">
             {{ $t('tuitionFee.table.className') }}
           </th>
-          <th class="text-left ws-nowrap minW-150px w-15">
+          <th class="text-left ws-nowrap minW-200px w-15">
             {{ $t('tuitionFee.table.courseName') }}
           </th>
           <th class="text-left ws-nowrap">
@@ -186,6 +186,9 @@ function goDetailPage(id: string) {
   position: relative;
 
   .v-table__wrapper {
+    tr {
+      transition: all 0.2s ease-in-out;
+    }
     tr:hover {
       .first-column-item,
       .second-column-item {

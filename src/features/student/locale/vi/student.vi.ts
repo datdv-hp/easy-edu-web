@@ -52,31 +52,31 @@ const studentVi = {
       phone: 'Số điện thoại đã tồn tại',
     },
     [ErrorCode.ITEM_INVALID]: {
-      course: 'Thêm mới học viên không thành công. Vì có khóa học không tồn tại',
-      subjects: 'Thêm mới học viên không thành công. Vì có học phần không tồn tại',
+      course: 'Có khóa học không tồn tại',
+      subjects: 'Có học phần không tồn tại',
     },
   },
   update: {
     [ErrorCode.ITEM_NOT_FOUND]: {
-      student: 'Cập nhật học viên không thành công. Vì học viên không tồn tại',
+      student: 'Học viên không tồn tại',
     },
     [ErrorCode.ITEM_ALREADY_EXIST]: {
       phone: 'Số điện thoại đã tồn tại',
     },
     [ErrorCode.UNPROCESSABLE_ENTITY]: {
-      email: 'Cập nhật học viên không thành công. Vì không được thay đổi email',
+      email: 'Không được thay đổi email',
     },
     [ErrorCode.CONFLICT]: {
-      lesson: 'Cập nhật học viên không thành công. Vì học viên đang có buổi học',
-      course: 'Cập nhật học viên không thành công. Vì khóa học đang có buổi học',
+      lesson: 'Học viên đang có buổi học',
+      course: 'Khóa học đang có buổi học',
     },
   },
   delete: {
     [ErrorCode.ITEM_NOT_FOUND]: {
-      student: 'Xóa học viên không thành công. Vì học viên không tồn tại',
+      student: 'Học viên không tồn tại',
     },
     [ErrorCode.CONFLICT]: {
-      lesson: 'Xóa học viên không thành công. Vì học viên đang có buổi học',
+      lesson: 'Học viên đang có buổi học',
     },
   },
   list: 'Danh sách học viên',

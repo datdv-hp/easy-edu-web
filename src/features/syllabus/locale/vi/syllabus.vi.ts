@@ -152,7 +152,7 @@ const syllabusVi = {
   createError: {
     [ErrorCode.ITEM_NOT_FOUND]: {
       subject:
-        'Thêm mới giáo trình không thành công. Vì có học phần trong bài giảng không tồn tại',
+        'Có học phần trong bài giảng không tồn tại',
     },
     [ErrorCode.ITEM_ALREADY_EXIST]: {
       name: 'Tên giáo trình đã tồn tại',
@@ -160,12 +160,12 @@ const syllabusVi = {
   },
   updateError: {
     [ErrorCode.ITEM_NOT_FOUND]: {
-      id: 'Cập nhật giáo trình không thành công. Vì giáo trình không tồn tại',
+      id: 'Giáo trình không tồn tại',
       subject:
-        'Cập nhật giáo trình không thành công. Vì có học phần trong bài giảng không tồn tại',
+        'Có học phần trong bài giảng không tồn tại',
       lecture: {
-        id: 'Cập nhật giáo trình không thành công. Vì bài giảng không tồn tại',
-        syllabusId: 'Cập nhật giáo trình không thành công. Vì giáo trình không tồn tại',
+        id: 'Bài giảng không tồn tại',
+        syllabusId: 'Giáo trình không tồn tại',
       },
     },
     [ErrorCode.ITEM_ALREADY_EXIST]: {

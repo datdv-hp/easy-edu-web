@@ -155,7 +155,7 @@ const teacherVi = {
   },
   update: {
     [ErrorCode.ITEM_NOT_FOUND]: {
-      teacher: 'Cập nhật giảng viên không thành công. Vì giảng viên không tồn tại',
+      teacher: 'Giảng viên không tồn tại',
       teacherDetail: { subjectIds: 'Học phần phần không tồn tại' },
     },
     [ErrorCode.ITEM_ALREADY_EXIST]: {
@@ -163,15 +163,15 @@ const teacherVi = {
     },
     [ErrorCode.CONFLICT]: {
       lesson:
-        'Cập nhật giảng viên không thành công. Quản trị vi này hiện đang có buổi học',
+        'Quản trị vi này hiện đang có buổi học',
     },
   },
   delete: {
     [ErrorCode.ITEM_NOT_FOUND]: {
-      teacher: 'Xóa giảng viên không thành công. Vì giảng viên không tồn tại',
+      teacher: 'Giảng viên không tồn tại',
     },
     [ErrorCode.CONFLICT]: {
-      lesson: 'Xóa giảng viên không thành công. Vì giảng viên đang có buổi học',
+      lesson: 'Giảng viên đang có buổi học',
     },
   },
   //

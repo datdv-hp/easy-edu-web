@@ -1,16 +1,21 @@
 <script lang="ts" setup>
 import logo from '@/assets/images/logo.svg';
+import { ISidebarGroup } from '@/common/interfaces';
 import { useSidebarStore } from '@/common/stores';
-import { reactive, ref } from 'vue';
+import UserAvatar from '@/components/UserAvatar.vue';
+import { ComputedRef, onMounted, ref } from 'vue';
 import { VListGroup, VMenu } from 'vuetify/lib/components/index.mjs';
 import SubGroupWrapper from './SubGroupWrapper.vue';
 import { sidebarItems } from './sidebar';
-import UserAvatar from '@/components/UserAvatar.vue';
 
 const sidebarStore = useSidebarStore();
 const rail = ref(sidebarStore.rail);
 const width = ref(300);
-const sidebar = reactive(sidebarItems());
+let sidebar: ComputedRef<ISidebarGroup[]>;
+
+onMounted(() => {
+  sidebar = sidebarItems();
+});
 
 const toggleCollapse = () => {
   if (!rail.value) {

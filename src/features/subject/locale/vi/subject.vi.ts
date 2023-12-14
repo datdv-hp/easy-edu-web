@@ -37,7 +37,7 @@ const subjectsVi = {
       },
     },
     [ErrorCode.ITEM_ALREADY_EXIST]: {
-      subjectCode: 'Thêm mới học phần không thành công. Vì mã học phần đã tồn tại',
+      subjectCode: 'Mã học phần đã tồn tại',
     },
   },
   get: {
@@ -48,20 +48,20 @@ const subjectsVi = {
   update: {
     title: 'Chỉnh sửa học phần',
     [ErrorCode.ITEM_NOT_FOUND]: {
-      id: 'Cập nhật học phần không thành công. Vì học phần không tồn tại',
+      id: 'Học phần không tồn tại',
     },
     [ErrorCode.ITEM_ALREADY_EXIST]: {
-      subjectCode: 'Cập nhật học phần không thành công. Vì mã học phần đã tồn tại',
+      subjectCode: 'Mã học phần đã tồn tại',
     },
   },
   delete: {
     title: 'Xác nhận xóa',
     text: 'Bạn chắc chắn muốn xóa %{totalSelectedCourses} học phần đã chọn ?',
     [ErrorCode.ITEM_NOT_FOUND]: {
-      id: 'Xóa học phần không thành công. Vì học phần không tồn tại',
+      id: 'Học phần không tồn tại',
     },
     [ErrorCode.CONFLICT]: {
-      course: 'Xóa học phần không thành công. Vì học phần đang có trong một khóa học',
+      course: 'Học phần đang có trong một khóa học',
     },
   },
   notification: {

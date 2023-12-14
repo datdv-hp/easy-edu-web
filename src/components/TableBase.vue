@@ -39,6 +39,7 @@ withDefaults(
   td {
     border-collapse: collapse;
     border-color: #00000014;
+
   }
 
   th {

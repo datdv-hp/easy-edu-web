@@ -244,15 +244,15 @@ export default {
   },
   deleteError: {
     [ErrorCode.ITEM_NOT_FOUND]: {
-      id: 'Xóa vai trò không thành công. Vì vai trò không tồn tại',
+      id: 'Vai trò không tồn tại',
     },
     [ErrorCode.CONFLICT]: {
-      id: 'Xóa vai trò không thành công. Vì đang có người dùng',
+      id: 'Đang có người dùng sử dụng vai trò này',
     },
   },
   updateError: {
     [ErrorCode.ITEM_NOT_FOUND]: {
-      id: 'Cập nhật vai trò không thành công. Vì vai trò không tồn tại',
+      id: 'Vai trò không tồn tại',
     },
     [ErrorCode.ITEM_ALREADY_EXIST]: {
       name: 'Vai trò đã tồn tại',

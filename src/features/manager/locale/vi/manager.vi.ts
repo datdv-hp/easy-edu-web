@@ -45,25 +45,25 @@ export default {
   },
   update: {
     [ErrorCode.ITEM_NOT_FOUND]: {
-      manager: 'Cập nhật quản trị viên không thành công. Vì quản trị viên không tồn tại',
+      manager: 'Quản trị viên không tồn tại',
     },
     [ErrorCode.CONFLICT]: {
       lesson:
-        'Cập nhật quản trị viên không thành công. Vì quản trị viên đang có lịch giảng dạy',
+        'Quản trị viên đang có lịch giảng dạy',
     },
     [ErrorCode.ITEM_ALREADY_EXIST]: {
       phone: 'Số điện thoại đã tồn tại',
     },
     [ErrorCode.UNPROCESSABLE_ENTITY]: {
-      email: 'Cập nhật quản trị viên không thành công. Vì không được thay đổi email',
+      email: 'Không được thay đổi email',
     },
   },
   delete: {
     [ErrorCode.ITEM_NOT_FOUND]: {
-      manager: 'Xóa quản trị viên không thành công. Vì quản trị viên không tồn tại',
+      manager: 'Quản trị viên không tồn tại',
     },
     [ErrorCode.CONFLICT]: {
-      lesson: 'Xóa quản trị viên không thành công. Vì quản trị viên có lịch giảng dạy',
+      lesson: 'Quản trị viên có lịch giảng dạy',
     },
   },
   detail: {

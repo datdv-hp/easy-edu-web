@@ -145,22 +145,22 @@ export default {
   },
   update: {
     [ErrorCode.ITEM_NOT_FOUND]: {
-      id: 'Cập nhật buổi học không thành công. Vì buổi học không tồn tại',
+      id: 'Buổi học không tồn tại',
     },
     [ErrorCode.GROUP_MAX_QUANTITY]: {
       subject:
-        'Cập nhật buổi học không thành công. Vì học phần này đã tạo đủ buổi so với thời lượng',
+        'Học phần này đã tạo đủ buổi so với thời lượng',
     },
     [ErrorCode.ITEM_INVALID]: {
-      time: 'Câp nhật buổi học không thành công. Vì chỉ được cập nhật tài liêu và file ghi hình buổi học',
+      time: 'Chỉ được cập nhật tài liêu và file ghi hình buổi học',
       updateTime:
-        'Cập nhật buổi học không thành công. Vì thời gian diễn ra buổi học là quá khứ',
+        'Thời gian diễn ra buổi học là quá khứ',
     },
     [ErrorCode.ITEM_ALREADY_EXIST]: {
       teacher:
-        'Cập nhật buổi học không thành công. Vì giảng viên đã có lịch dạy vào khoảng thời gian diễn ra buổi học',
+        'Giảng viên đã có lịch dạy vào khoảng thời gian diễn ra buổi học',
       classroom:
-        'Cập nhật buổi học không thành công. Vì thời gian buổi học bị trùng với một buổi học khác đang có trong lớp học',
+        'Thời gian buổi học bị trùng với một buổi học khác đang có trong lớp học',
     },
   },
   create: {
@@ -175,7 +175,7 @@ export default {
     },
     [ErrorCode.GROUP_MAX_QUANTITY]: {
       subject:
-        'Thêm mới buổi học không thành công. Vì học phần này đã tạo đủ buổi so với thời lượng',
+        'Học phần này đã tạo đủ buổi so với thời lượng',
     },
     [ErrorCode.ITEM_ALREADY_EXIST]: {
       teacher: 'Giảng viên đã có lịch dạy vào khoảng thời gian này',
@@ -186,13 +186,13 @@ export default {
   },
   delete: {
     [ErrorCode.ITEM_NOT_FOUND]: {
-      id: 'Xóa buổi học không thành công. Vì buổi học không tồn tại',
+      id: 'Buổi học không tồn tại',
     },
     [ErrorCode.ITEM_INVALID]: {
-      lessonHappening: 'Xóa buổi học không thành công. Vì buổi học đang diễn ra',
-      lessonPast: 'Xóa buổi học không thành công. Vì buổi học đã kết thúc',
+      lessonHappening: 'Buổi học đang diễn ra',
+      lessonPast: 'Buổi học đã kết thúc',
       lessonUpcoming:
-        'Xóa buổi học không thành công. Vì buổi học có thời gian sắp diễn ra nhỏ hơn 8 tiếng',
+        'Buổi học có thời gian sắp diễn ra nhỏ hơn 8 tiếng',
     },
   },
   validate: {

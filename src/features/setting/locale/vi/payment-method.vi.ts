@@ -38,7 +38,7 @@ export const paymentMethodVi = {
             name: 'Tên phương thức thanh toán đã tồn tại',
         },
         [ErrorCode.ITEM_NOT_FOUND]: {
-            id: 'Cập nhật phương thức thanh toán không thành công. Vì phương thức thanh toán không tồn tại',
+            id: 'Phương thức thanh toán không tồn tại',
         },
     },
     createError: {
@@ -48,7 +48,7 @@ export const paymentMethodVi = {
     },
     deleteError: {
         [ErrorCode.ITEM_NOT_FOUND]: {
-            id: 'Xóa phương thức thanh toán không thành công. Vì phương thức thanh toán không tồn tại',
+            id: 'Phương thức thanh toán không tồn tại',
         },
     },
     action: {

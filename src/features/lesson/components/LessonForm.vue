@@ -114,7 +114,6 @@ onBeforeMount(async () => {
   if (googleCode && googleEmail) {
     await getGoogleEmail();
   } else {
-    console.log('reset', googleCode, googleEmail);
     resetGoogleInfo();
   }
 });
